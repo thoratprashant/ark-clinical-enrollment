@@ -1,0 +1,33 @@
+/* Colors */
+$primary: #183887;
+$secondary: #2E3139;
+$success: #4caf50;
+$warning: #ff9800;
+$error: #FF181C;
+$info: #2196f3;
+$grey: #909090;
+
+$bg-light: #E9ECEF;
+$text-dark: #1f2937;
+$text-muted: #6b7280;
+
+/* Font */
+@font-face {
+  font-family: 'mono-light';
+  src: url('../font/MaisonMono-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'mono-regular';
+  src: url('../font/MaisonMono-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$font-family-base: 'mono-light', sans-serif;;
+
+$font-size-base: 1rem;
+$base-font-size: 1rem;
+   
+
