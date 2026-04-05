@@ -15,11 +15,13 @@ a {
 
 $font-family-base: 'mono-light', sans-serif;
 $font-plus-jakarta:"Plus Jakarta Sans", sans-serif;
+$font-inter:"Inter", sans-serif;
 
 body{
 
   .font-mono-light{font-family: v.$font-family-base !important; }
   .font-plus-jakarta{font-family: v.$font-plus-jakarta !important; }
+  .font-inter{font-family: v.$font-inter !important; }
 
 
   .text-primary { color: v.$primary !important; }
@@ -51,7 +53,7 @@ body{
     padding: 0.78rem 1rem;
     border-color: v.$bg-light !important ;
     font-size: 0.875rem;
-    font-family: v.$font-plus-jakarta;
+    font-family: v.$font-inter;
     font-weight: 400;
     color: #231F20;
     &:focus{
