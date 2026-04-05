@@ -1,43 +1,82 @@
-<div class="login--wrapper d-flex flex-column">
-  <h2 class="fw-medium mb-1 text-secondary">Login </h2>
-  <p>Access your account to continue</p>
-  <form>
-    <div class="row">
-      <div class="col-12 mb-4">
-        <label class="form-label">Email </label>
-        <div class="position-relative input--prefix">
-          <mat-icon fontSet="material-icons-outlined">mail</mat-icon>
-          <input type="text" class="form-control" placeholder="Enter Email Id">
-        </div>
-      </div>
-      <div class="col-12 mb-2">
-        <label class="form-label">Enter Password </label>
-        <div class="position-relative input--prefix">
-          <mat-icon fontSet="material-icons-outlined">lock</mat-icon>
-          <input [type]="showNewPassword ? 'text' : 'password'" class="form-control pe-5" formControlName="password"
-            placeholder="Enter Password">
+ <div class="login--wrapper d-flex flex-column">
 
-          <mat-icon fontSet="material-icons-outlined" (click)="toggleNewPassword()" class="icon--password">
-            {{ showNewPassword ? 'visibility_off' : 'visibility' }}
-          </mat-icon>
-        </div>
-      </div>
-      <div class="col-12 d-flex align-item-center justify-content-between mb-4">
-        <mat-checkbox>Remeber me</mat-checkbox>
-        <a class="text-primary font-plus-jakarta font-14 mt-2" routerLink="/auth/forgot-password">Forgot Password?</a>
-      </div>
+   <h2 class="fw-medium mb-1 text-secondary">Login</h2>
+   <p class="mb-4">Access your account to continue</p>
 
-      <div class="col-12">
-       <div class="d-flex align-items-center button--group">
-         <button type="button" class="btn btn-primary w-100 ">Sign in</button>
-         <div class="connecter flex-shrink-0"></div>
-         <button type="button" class="btn btn-primary flex-shrink-0 ">
-          <mat-icon>chevron_right</mat-icon>
-         </button>
+   <form [formGroup]="form" (ngSubmit)="submit()">
+     <div class="row">
+
+       <!-- Email -->
+       <div class="col-12 mb-4">
+         <label for="email" class="form-label">Email</label>
+         <div class="position-relative input--prefix">
+           <mat-icon fontSet="material-icons-outlined">mail</mat-icon>
+           <input id="email" type="email" formControlName="email" class="form-control" placeholder="Enter Email Id"
+             [ngClass]="{'is-invalid': form.get('email')?.touched && form.get('email')?.invalid}" />
+         </div>
+         <!-- Error -->
+         <div class="error d-block" *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+           <span class="d-flex align-items-center" *ngIf="form.get('email')?.errors?.['required']">
+            <mat-icon class="me-2">info</mat-icon>
+             Email is required
+           </span>
+           <span class="d-flex align-items-center" *ngIf="form.get('email')?.errors?.['email']">
+            <mat-icon class="me-2">info</mat-icon>
+             Enter valid email
+           </span>
+         </div>
        </div>
-      </div>
 
-    </div>
-  </form>
+       <!-- Password -->
+       <div class="col-12 mb-3">
+         <label for="password" class="form-label">Enter Password</label>
+         <div class="position-relative input--prefix">
+           <mat-icon fontSet="material-icons-outlined">
+             lock
+           </mat-icon>
+           <input id="password" [type]="showNewPassword ? 'text' : 'password'" class="form-control pe-5"
+             formControlName="password" placeholder="Enter Password"
+             [ngClass]="{'is-invalid': form.get('password')?.touched && form.get('password')?.invalid}" />
+           <mat-icon fontSet="material-icons-outlined" class="icon--password" (click)="toggleNewPassword()">
+             {{ showNewPassword ? 'visibility_off' : 'visibility' }}
+           </mat-icon>
 
-</div>
+         </div>
+         <!-- Error -->
+         <div class="error d-block" *ngIf="form.get('password')?.touched && form.get('password')?.invalid"> 
+           <span class="d-flex align-items-center" *ngIf="form.get('password')?.errors?.['required']">
+            <mat-icon class="me-2">info</mat-icon>
+             Password is required
+           </span> 
+           <span class="d-flex align-items-center" *ngIf="form.get('password')?.errors?.['minlength']">
+            <mat-icon class="me-2">info</mat-icon>
+             Minimum 6 characters required
+           </span> 
+         </div>
+       </div>
+
+       <!-- Remember + Forgot -->
+       <div class="col-12 d-flex align-items-center justify-content-between mb-4">
+         <mat-checkbox>Remember me</mat-checkbox>
+         <a class="text-primary font-plus-jakarta font-14" routerLink="/auth/forgot-password">
+           Forgot Password?
+         </a>
+       </div>
+
+       <!-- Buttons -->
+       <div class="col-12">
+         <div class="d-flex align-items-center button--group" [ngClass]="{ 'disabled': form.invalid }">
+           <button type="submit" class="btn btn-primary w-100">
+             Sign in
+           </button>
+           <div class="connecter flex-shrink-0"></div>
+           <button type="button" class="btn btn-primary flex-shrink-0">
+             <mat-icon>chevron_right</mat-icon>
+           </button>
+         </div>
+       </div>
+
+     </div>
+   </form>
+
+ </div>

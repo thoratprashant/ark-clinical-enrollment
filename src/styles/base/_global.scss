@@ -43,6 +43,8 @@ body{
       background-color: v.$info!important;
   }
 
+ 
+
   // Form Controls
   .form-control {
     border-radius: 6.25rem;
@@ -56,6 +58,12 @@ body{
       box-shadow: none;
       border-color: #03514B !important; 
     }
+    &.is-invalid{
+      border-color: v.$error !important;
+      box-shadow: none !important;
+      background-image: none !important;  
+      padding-right: 0.75rem !important; 
+    } 
   }
   .input--prefix{
     .mat-icon {
@@ -78,7 +86,18 @@ body{
       }
     }
     .form-control{
-      padding-left: 40px;
+      padding-left: 45px;
+    }
+  }
+  .error {
+    color: v.$error !important;
+    font-family: v.$font-plus-jakarta;
+    font-size: 0.75rem;
+    margin-top: 5px;
+    .mat-icon{
+      font-size: 14px;
+      width: 14px;
+      height: 14px;
     }
   }
   .form-label{
