@@ -1,13 +1,46 @@
 @use '../abstracts/variables' as v;
 
 body{
+
+    // .w-48{width: 3rem;}
+    // .h-48{height: 3rem;}
+
     .btn {
         border-radius: 4rem;
         background-color: v.$primary;
-        font-weight: 500;
-        padding: 0.44rem 1.125rem;
+        border-color: v.$primary;
+        font-weight: 400;
+        padding: .78rem 1.1rem;
+        font-family: v.$font-plus-jakarta !important; 
+        font-size: 0.875rem;
+        min-height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .mat-icon{
+            font-size: 16px;
+            width: 16px;
+            height: 16px;
+        } 
+
         &.btn-light{
             background-color: #F8F9FA;
+        }
+    }
+
+    .button--group{
+        .connecter{
+            width: 0.875rem;
+            height: 1rem;
+            background-color: v.$primary;
+            margin: 0 -4px;
+        }
+        &:hover{
+            .btn-primary,
+            .connecter{
+                background-color: v.$info;
+                border-color: v.$info; 
+            }
         }
     }
 }

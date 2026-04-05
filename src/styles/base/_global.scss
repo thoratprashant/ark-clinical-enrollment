@@ -1,5 +1,7 @@
 @use '../abstracts/variables' as v;  
 
+
+
 html, body {
   height: 100%;
   margin: 0;
@@ -11,18 +13,25 @@ a {
   color: v.$primary !important;
 } 
 
+$font-family-base: 'mono-light', sans-serif;
+$font-plus-jakarta:"Plus Jakarta Sans", sans-serif;
+
 body{
+
+  .font-mono-light{font-family: v.$font-family-base !important; }
+  .font-plus-jakarta{font-family: v.$font-plus-jakarta !important; }
+
 
   .text-primary { color: v.$primary !important; }
   .text-secondary{ color: v.$secondary !important;}
   .text-danger, .text-error { color: v.$error !important;}
-  .wb-ba{word-break: break-all !important}
-
+  .wb-ba{word-break: break-all !important} 
+ 
   // Angular Material 
   .mat-internal-form-field>label{
-    font-family: v.$font-family-base !important; 
+    font-family: v.$font-plus-jakarta !important; 
     margin-top: 0.625rem;
-    font-size: 1rem; 
+   font-size: 0.875rem;
     color: v.$secondary;
   }
   .mdc-checkbox__background{
@@ -30,19 +39,65 @@ body{
   }
   .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background, 
   .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background{
-      border-color:v.$primary !important;
-      background-color: v.$primary!important;
+      border-color:v.$info !important;
+      background-color: v.$info!important;
   }
 
   // Form Controls
   .form-control {
-    border-radius: 4rem;
-    padding: 0.44rem 0.875rem;
-    border-color: v.$grey !important ;
+    border-radius: 6.25rem;
+    padding: 0.78rem 1rem;
+    border-color: v.$bg-light !important ;
+    font-size: 0.875rem;
+    font-family: v.$font-plus-jakarta;
+    font-weight: 400;
+    color: #231F20;
     &:focus{
       box-shadow: none;
+      border-color: #03514B !important; 
     }
   }
+  .input--prefix{
+    .mat-icon {
+      position: absolute;
+      top: 15px;
+      left: 16px;
+      font-size: 18px;
+      height: 18px;
+      width: 18px;
+      color: #899cc9; 
+      &.icon--password{
+        left: unset;
+        right: 16px;
+        cursor: pointer;
+      }
+    } 
+    &:focus-within{
+      .mat-icon {
+        color: #03514B; 
+      }
+    }
+    .form-control{
+      padding-left: 40px;
+    }
+  }
+  .form-label{
+    font-family: v.$font-plus-jakarta;
+    font-size: 0.75rem;
+  } 
+  .form-control::placeholder {
+    color: #899CC9; 
+    font-family: v.$font-plus-jakarta;
+  } 
+  .form-control::-webkit-input-placeholder {
+    color: #899CC9;
+    font-family: v.$font-plus-jakarta;
+  } 
+  .form-control:-ms-input-placeholder {
+    color: #899CC9;
+    font-family: v.$font-plus-jakarta;
+  }
+
 
   .dropdown-menu{ 
       li{
@@ -95,17 +150,7 @@ body{
     padding: 1.5625rem 1.5rem;
     margin-bottom: 1.5rem;
   }
-  .icon--password {
-      position: absolute;
-      right: 3px;
-      top: -3px;
-      .mat-icon{
-          color: #505050;
-          font-size: 21px;
-          height: 21px;
-          width: 21px;
-      }
-  }
+ 
 
   // Modal
   .modal--wrapper{

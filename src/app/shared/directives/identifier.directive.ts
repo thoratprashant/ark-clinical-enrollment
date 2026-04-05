@@ -23,7 +23,7 @@ export class UserNameIdentifierDirective {
     const mode = this.engine.getMode(raw);
     const clean = this.engine.normalize(raw, mode);
 
-    this.login.isPhoneMode = mode === 'phone';
+    // this.login.isPhoneMode = mode === 'phone';
 
     // Prevent infinite +1 loop
     if (input.value !== clean) {
