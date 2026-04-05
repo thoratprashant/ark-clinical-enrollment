@@ -1,1 +1,0 @@
-import{_a as t,tb as a}from"./chunk-H6JDG2R5.js";import"./chunk-7CGTOI24.js";var s=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=t({type:n,selectors:[["app-user-managment-listing"]],decls:1,vars:0,consts:[[1,"container-fluid"]],template:function(e,m){e&1&&a(0,"div",0)},encapsulation:2})};export{s as UserManagmentListing};
