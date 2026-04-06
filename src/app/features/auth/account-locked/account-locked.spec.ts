@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VerificationCode } from './verification-code';
+import { AccountLocked } from './account-locked';
 
-describe('VerificationCode', () => {
-  let component: VerificationCode;
-  let fixture: ComponentFixture<VerificationCode>;
+describe('AccountLocked', () => {
+  let component: AccountLocked;
+  let fixture: ComponentFixture<AccountLocked>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [VerificationCode]
+      imports: [AccountLocked]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(VerificationCode);
+    fixture = TestBed.createComponent(AccountLocked);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

@@ -1,0 +1,38 @@
+<div class="login--wrapper d-flex flex-column">
+  <h2 class="fw-medium mb-1 text-secondary">Account Locked</h2>
+  <p class="mb-4">Too many failed login attempts. Your account has been
+    temporarily locked for security reasons.</p>
+
+  <form>
+    <div class="row">
+      <div class="col-12 mb-4 mb-sm-5">
+        <div class="locked--timer d-flex flex-column align-items-center justify-content-center">
+            <p class="mb-0 font-14">Try again in:</p>
+            <div class="d-flex align-items-center timer my-2">
+                <span>{{ format(minutes) }}</span>
+                <span class="mx-2">:</span>
+                <span>{{ format(seconds) }}</span>
+            </div>
+            <p class="mb-0 font-14">minutes:seconds</p>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="d-flex align-items-center button--group">
+          <button type="button" class="btn btn-primary w-100" routerLink="/auth/reset-password">
+            Reset Password
+          </button>
+          <div class="connecter flex-shrink-0"></div>
+          <button type="button" class="btn btn-primary flex-shrink-0" routerLink="/auth/reset-password">
+            <mat-icon>chevron_right</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="col-12">
+        <a class="d-flex justify-content-center font-14 text-center font-inter mt-2 mt-sm-4"
+          routerLink="/auth/login">Forgot password?</a>
+      </div>
+    </div>
+  </form>
+
+</div>
