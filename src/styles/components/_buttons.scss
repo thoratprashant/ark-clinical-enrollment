@@ -49,8 +49,11 @@ body{
     }
 }
  @media (max-width: 767px) {
-    .btn {
-        font-size: 0.875rem !important;
-        padding: 0.4rem 0.6rem !important;
-    } 
+    body{
+        .btn {
+            font-size: 0.7rem !important;
+            padding: 0.4rem 0.6rem !important;
+            min-height: 2rem;
+        }
+    }
  }

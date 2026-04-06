@@ -21,6 +21,7 @@
         "build": {
           "builder": "@angular/build:application",
            "options": {
+                "aot": true,
                 "outputPath": "dist/ark-clinical-enrollment",
                 "index": "src/index.html",
                 "browser": "src/main.ts",

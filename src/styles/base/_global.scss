@@ -207,19 +207,25 @@ body{
 }  
 
  @media (max-width: 767px) {
+  .font-14,
   body .mat-internal-form-field > label,
   ::placeholder,
   .form-control,
   .form-label{
-    font-size: 0.875rem !important;
+    font-size: 0.75rem !important;
   } 
   body .card{
     padding: 1rem;
     margin-bottom: 1rem;
   }
   body .modal--wrapper .mat-mdc-dialog-surface .mat-mdc-dialog-title{
-      font-size: 17px; 
+      font-size: 16px; 
       padding: 14px 45px 14px 15px;
   }
-  
+  body .form-control{
+     padding: .6rem 1rem;
+  } 
+  body .input--prefix .mat-icon{
+    top: 12px;
+  }
  }
