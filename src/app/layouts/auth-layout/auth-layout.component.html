@@ -1,12 +1,18 @@
 <div class="auth-container d-flex flex-column flex-sm-row">
-  <div class="auth-left d-flex flex-column min-vh-100 w-100 justify-content-center"> 
-    <!-- <h1 class="m-0">Start Your Journey with Us</h1> -->
-    <img src="images/auth-left.png" alt="img" class="img-fluid">
+  <div class="auth-left d-flex flex-column min-vh-100 w-100 justify-content-center">
+    <!-- <img src="images/auth-left.png" alt="img" class="img-fluid">
+    <img src="images/auth-left-login.png" alt="img" class="img-fluid"> -->
+
+    @if (isLoginPage) {
+      <img src="images/auth-left-login.png" alt="login" class="img-fluid">
+    } @else {
+      <img src="images/auth-left.png" alt="default" class="img-fluid">
+    }
+
   </div>
   <div class="auth-right d-flex flex-column justify-content-center flex-shrink-0">
-    <div class="ar--inner"> 
+    <div class="ar--inner">
       <router-outlet></router-outlet>
     </div>
- 
   </div>
 </div>
