@@ -10,7 +10,7 @@ body{
         background-color: v.$primary;
         border-color: v.$primary;
         font-weight: 400;
-        padding: .78rem 1.1rem;
+        padding: .78rem 2rem;
         font-family: v.$font-plus-jakarta !important; 
         font-size: 0.875rem;
         min-height: 3rem;
@@ -21,11 +21,10 @@ body{
             font-size: 16px;
             width: 16px;
             height: 16px;
-        } 
-
+        }  
         &.btn-light{
             background-color: #F8F9FA;
-        }
+        }  
     }
 
     .button--group{
@@ -34,6 +33,11 @@ body{
             height: 1rem;
             background-color: v.$primary;
             margin: 0 -4px;
+        }
+        .sub--round--btn{
+            width: 48px;
+            height: 48px;
+            padding: 0 !important;
         }
         &:hover{
             .btn-primary,
@@ -46,6 +50,22 @@ body{
             opacity: 0.6;
             pointer-events: none;
         }
+
+        &.orange--btn--group{
+            .connecter,
+            .btn-primary{
+                background-color: #CA9551; 
+                border-color:#CA9551; 
+            }
+            &:hover{ 
+                .connecter,
+                .btn-primary{
+                    background-color: #e5a654;
+                    border-color: #e5a654; 
+                }
+            }
+        } 
+       
     }
 }
  @media (max-width: 767px) {
@@ -55,5 +75,11 @@ body{
             padding: 0.4rem 0.6rem !important;
             min-height: 2rem;
         }
+        .button--group{
+            .sub--round--btn{
+                width: 32px;
+                height: 32px;
+            }
+        } 
     }
  }

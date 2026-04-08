@@ -12,44 +12,26 @@
     z-index: 9999;
     width: 100%;
     border-bottom: 1px solid #E5E7EB;   
+    .logo{
+        img{
+            width: 250px;
+        }
+    }
 
     /* DESKTOP NAV */
     .nav-desktop {
         display: flex;
         align-items: center;
         gap: 1.5rem;
-        .status--dd{
-            .btn-light{
-                border-color: transparent !important; 
-            }
-            .status{
-                width: 8px;
-                height: 8px; 
-                border-radius: 20px;
-                display: inline-flex;
-                margin-right: 8px;
-                &.available{
-                    background-color: #22C55E;
-                }
-                &.unavailable{
-                    background-color: #FF181C;
-                }
-                &.away{
-                    background-color: yellow;
-                }
-                &.grey{
-                    background-color: grey;
-                }
-            }
-        }
+         
         .notifications{
             .mat-icon{
-                color: #6C757D; 
+                color: #525252; 
             }
             .badge-indicator{
                 width: 8px;
                 height: 8px;
-                background-color: #FF181C;
+                background-color: #171717;
                 border-radius: 20px;
                 position: absolute;
                 right: 11px;
@@ -66,6 +48,11 @@
             img{
                 max-height: 100%;
             }
+        }
+        .user--name{
+            max-width: 150px;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         &.menus-desktop{
            ul{

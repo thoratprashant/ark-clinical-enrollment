@@ -1,31 +1,19 @@
 <!-- TOP NAVBAR -->
 <header class="topbar">
   <div class="logo">
-    <img src="images/admin-logo.svg" alt="img" class="logo">
+    <img src="images/logo.webp" alt="img" class="logo">
   </div>
 
   <div class="nav-desktop menus-desktop">
     <ul class="m-0 p-0 d-flex ">
-        <li routerLinkActive="active"><a routerLink="/admin/user-managment">User Management</a></li>
+        <!-- <li routerLinkActive="active"><a routerLink="/admin/user-managment">User Management</a></li>
         <li routerLinkActive="active"><a routerLink="/admin/user-managment2">Analytics</a></li>
-        <li><a>Patients</a></li>
+        <li><a>Patients</a></li> -->
     </ul>
   </div>
 
   <!-- Desktop Nav -->  
-  <nav class="nav-desktop">
-    <div class="btn-group status--dd">
-        <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-           <span class="status available"></span> Available
-        </button>
-        <ul class="dropdown-menu w-100 p-0">
-            <li><button class="dropdown-item" type="button"> <span class="status available"></span> Available</button></li> 
-            <li><button class="dropdown-item" type="button"> <span class="status unavailable"></span> Unavailable</button></li>  
-            <li><button class="dropdown-item" type="button"> <span class="status away"></span> Away</button></li>  
-            <li><button class="dropdown-item" type="button"> <span class="status grey"></span> Offline</button></li>
-        </ul>
-    </div> 
-
+  <nav class="nav-desktop"> 
     <div class="notifications position-relative">
         <button matIconButton aria-label="notification">
             <mat-icon fontSet="material-icons-outlined">notifications</mat-icon>  
@@ -35,8 +23,14 @@
     </div>
 
     <div class="btn-group"> 
-        <div class="user--profile--round dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-            <img src="images/users/avatar-1.jpg" alt="user img" class="img-fluid">
+        <div class="dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+            <div class="user--profile--round me-2">
+                <img src="images/users/avatar-1.jpg" alt="user img" class="img-fluid">
+            </div>
+            <div class="d-flex flex-column">
+              <h6 class="font-13 m-0 text-black user--name font-inter">Dr. Sarah Wilson</h6>
+              <p class="m-0 font-12 font-inter text-secondary">Site Coordinator</p>
+            </div>
         </div>
         <ul class="dropdown-menu dropdown-menu-lg-end p-0"> 
             <li>
@@ -44,13 +38,7 @@
                     <mat-icon>account_circle</mat-icon>
                     Profile
                 </button>
-            </li> 
-             <li>
-                <button class="dropdown-item d-flex align-items-center" type="button">
-                    <mat-icon>settings</mat-icon>
-                    Settings
-                </button>
-            </li>
+            </li>  
             <li>
                  <button class="dropdown-item d-flex align-items-center" type="button">
                     <mat-icon>logout</mat-icon>
@@ -70,14 +58,10 @@
 <!-- MOBILE SIDEBAR -->
 <aside class="sidebar" [class.open]="mobileMenuOpen()">
     <div class="logo--sm">
-    <img src="images/admin-logo.svg" alt="img" class="">
+    <!-- <img src="images/logo.webp" alt="img" class=""> -->
   </div>
-  <nav>
-    <a routerLink="/admin/dashboard" (click)="closeMenu()">User Management</a>
-    <a routerLink="/admin/users" (click)="closeMenu()">Analytics</a> 
-    <a routerLink="/admin/users" (click)="closeMenu()">Patients</a>
-    <a routerLink="/admin/users" (click)="closeMenu()">Profile</a>
-    <a routerLink="/admin/users" (click)="closeMenu()">Settings</a>
+  <nav> 
+    <a routerLink="/admin/users" (click)="closeMenu()">Profile</a> 
     <a routerLink="/admin/users" (click)="closeMenu()">Logout</a>
   </nav>
 </aside>
