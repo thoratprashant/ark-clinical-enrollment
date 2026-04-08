@@ -49,15 +49,18 @@ body{
 
   // Form Controls
   .form-control {
-    border-radius: 6.25rem;
-    padding: 0.78rem 1rem;
-    border-color: v.$bg-light !important ;
-    font-size: 0.875rem;
-    font-family: v.$font-inter;
+    border-radius: 12px;
+    padding: 0.69rem 1rem;
+    border-color:rgba(26, 26, 26, 0.10) !important ;
+    font-size: 1rem; 
     font-weight: 400;
-    color: #231F20;
+    color: #141414; 
+    border: 1px solid rgba(26, 26, 26, 0.10);
+    background: rgba(242, 240, 233, 0.50);
+
     &:focus{
       box-shadow: none;
+      background: rgba(242, 240, 233, 0.50);
       border-color: #03514B !important; 
     }
     &.is-invalid{
@@ -66,6 +69,10 @@ body{
       background-image: none !important;  
       padding-right: 0.75rem !important; 
     } 
+    &:disabled{
+      background-color: #fff;
+      color: #AEAEAE;
+    }
   }
   .input--prefix{
     .mat-icon {
@@ -102,24 +109,21 @@ body{
       height: 14px;
     }
   }
-  .form-label{
-    font-family: v.$font-plus-jakarta;
-    font-size: 0.75rem;
+  .form-label{ 
+    font-size: 1rem;
   } 
   .form-control::placeholder {
-    color: #899CC9; 
-    font-family: v.$font-plus-jakarta;
+    color: #AEAEAE;  
   } 
   .form-control::-webkit-input-placeholder {
-    color: #899CC9;
-    font-family: v.$font-plus-jakarta;
+    color: #AEAEAE; 
   } 
   .form-control:-ms-input-placeholder {
-    color: #899CC9;
-    font-family: v.$font-plus-jakarta;
+    color: #AEAEAE; 
   }
 
 
+  // Dropdown
   .dropdown-menu{ 
       li{
           border-bottom: 1px solid #E7E9EB;

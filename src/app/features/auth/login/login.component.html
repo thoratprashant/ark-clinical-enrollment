@@ -11,7 +11,7 @@
          <label for="email" class="form-label">Email</label>
          <div class="position-relative input--prefix">
            <mat-icon fontSet="material-icons-outlined">mail</mat-icon>
-           <input id="email" type="email" formControlName="email" class="form-control" placeholder="Enter Email Id"
+           <input id="email" name="email" type="email" formControlName="email" class="form-control" placeholder="Enter Email Id"
              [ngClass]="{'is-invalid': form.get('email')?.touched && form.get('email')?.invalid}" />
          </div>
          <!-- Error -->
@@ -34,7 +34,7 @@
            <mat-icon fontSet="material-icons-outlined">
              lock
            </mat-icon>
-           <input id="password" [type]="showNewPassword ? 'text' : 'password'" class="form-control pe-5"
+           <input id="password" name="password" [type]="showNewPassword ? 'text' : 'password'" class="form-control pe-5"
              formControlName="password" placeholder="Enter Password"
              [ngClass]="{'is-invalid': form.get('password')?.touched && form.get('password')?.invalid}" />
            <mat-icon fontSet="material-icons-outlined" class="icon--password" (click)="toggleNewPassword()">

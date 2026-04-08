@@ -1,12 +1,12 @@
 <div class="container-fluid profile--wrapper">
   <div class="row">
-    <div class="col-12">
+    <div class="col-12 mb-3 mb-sm-4">
       <div class="top--banner d-flex flex-column flex-sm-row justify-content-between">
         <div class="d-flex flex-column">
           <h1 class="mb-2">Your Profile</h1>
           <p class="m-0 font-16">View your account details and profile information</p>
         </div>
-        <div class="d-flex align-items-center flex-wrap gap-2">
+        <div class="d-flex align-items-center flex-wrap gap-2 justify-content-start justify-content-sm-end">
           <div class="d-flex align-items-center button--group orange--btn--group">
             <button type="submit" class="btn btn-primary w-100">
               Manage Sessions
@@ -28,5 +28,59 @@
         </div>
       </div>
     </div>
+
+    <div class="col-12 mb-3 mb-sm-4">
+      <div
+        class="user--details--box d-flex flex-column align-items-start align-items-sm-center flex-sm-row justify-content-between w-100">
+        <div class="d-flex align-items-center">
+          <div class="pp--round rounded-circle flex-shrink-0 me-3 d-flex align-items-center justify-content-center">
+            <mat-icon fontset="material-icons-outlined">person</mat-icon>
+          </div>
+          <div class="d-flex flex-column align-items-start user--info">
+            <h3 class="mb-0">Sarah Mitchell</h3>
+            <p class="font-14 mb-1 wb-ba">sarahmitchell567@gmail.com</p>
+            <div class="role d-flex align-items-center justify-content-center">Site Coordinator</div>
+          </div>
+        </div>
+        <div class="d-flex align-items-center button--group mt-3 mt-sm-0">
+          <button type="submit" class="btn btn-primary w-100">
+            Edit
+          </button>
+          <div class="connecter flex-shrink-0"></div>
+          <button type="button" class="btn btn-primary flex-shrink-0 sub--round--btn">
+            <mat-icon>chevron_right</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 mb-4">
+      <div class="info--note font-16 font-plus-jakarta">
+        Profile information is managed by your administrator. If you need to update your name, email, role, or assigned
+        site. Please contact your system administrator.
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12 col-sm-6 mb-4">
+          <label for="email" class="form-label">Full Name</label>
+          <input name="email" type="email" class="form-control" value="Sarah Mitchell" placeholder="Enter Email Id" disabled /> 
+        </div>
+        <div class="col-12 col-sm-6 mb-4">
+          <label for="email" class="form-label">Email</label>
+          <input name="email" type="email" class="form-control" value="your@email.com" placeholder="Enter Email"/> 
+        </div>
+        <div class="col-12 col-sm-6 mb-4">
+          <label for="email" class="form-label">Role</label>
+          <input name="email" type="email" class="form-control" value="Site Coordinator" placeholder="Enter Role"/> 
+        </div>
+        <div class="col-12 col-sm-6 mb-4">
+          <label for="email" class="form-label">Assigned Site</label>
+          <input name="email" type="email" class="form-control" value="St. Mary’s Medical Center" placeholder="Enter Assigned Site"/> 
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

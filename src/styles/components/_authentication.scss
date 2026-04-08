@@ -30,6 +30,34 @@
                 font-size: 0.875rem;
                 color: #425583;
             } 
+
+            .form-control { 
+                border-color: #D3E0FE !important ; 
+                font-size: 0.875rem;
+                font-family: "Inter", sans-serif;
+                font-weight: 400;
+                color: #231F20;
+                background-color: #fff;
+                &:focus{
+                    box-shadow: none;
+                    border-color: #03514B !important; 
+                }
+                &.is-invalid{
+                    border-color: #D91B1B !important;
+                    box-shadow: none !important;
+                    background-image: none !important;  
+                    padding-right: 0.75rem !important; 
+                } 
+            }  
+            .form-label, .error{
+                font-family: "Plus Jakarta Sans", sans-serif; 
+            }   
+            .form-control::placeholder,
+            .form-control:-ms-input-placeholder, 
+            .form-control::-webkit-input-placeholder {
+                color: #899CC9;
+                font-family: "Plus Jakarta Sans", sans-serif;
+            }  
         }
     }
 }
