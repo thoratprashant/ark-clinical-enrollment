@@ -5,10 +5,11 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon'; 
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AlertDialog } from '../../comman/alert-dialog/alert-dialog'; 
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
-  imports: [MatIconModule,CommonModule,MatButtonModule,MatDialogModule,MatCheckboxModule ],
+  imports: [MatIconModule,CommonModule,MatButtonModule,MatDialogModule,MatCheckboxModule,RouterLink ],
   templateUrl: './profile.html',
   styleUrl: './profile.scss',
 })

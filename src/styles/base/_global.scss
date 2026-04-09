@@ -45,6 +45,29 @@ body{
       background-color: v.$info!important;
   }
 
+  .breadcrumb {
+    --bs-breadcrumb-divider: '>';
+    .breadcrumb-item{
+      display: flex;
+      align-items: center;
+      a{
+        font-size: 16px;
+        color: v.$primary !important;
+        font-family: v.$font-plus-jakarta;
+      }
+      &.active{
+        font-weight: 700;
+        font-size: 16px;
+        color: v.$primary;
+        font-family: v.$font-plus-jakarta;
+        padding-left: 5px;
+      }
+      &::before{
+        font-size: 14px;
+        padding-right: 5px;
+      }
+    }
+  }
  
 
   // Form Controls

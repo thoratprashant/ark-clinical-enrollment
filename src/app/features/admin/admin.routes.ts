@@ -6,5 +6,10 @@ export const ADMINLAYOUT_ROUTES: Routes = [
     loadComponent: () => import('./profile/profile').then(c => c.Profile),
     data: { title: 'profile' }
   },  
+  {
+    path: 'change-password',
+    loadComponent: () => import('./change-password/change-password').then(c => c.ChangePassword),
+    data: { title: 'Change Password' }
+  },
 ];
  
