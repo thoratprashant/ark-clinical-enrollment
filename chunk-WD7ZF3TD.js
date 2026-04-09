@@ -1,0 +1,1 @@
+import"./chunk-7CGTOI24.js";var t=[{path:"profile",loadComponent:()=>import("./chunk-G52KAZO2.js").then(o=>o.Profile),data:{title:"profile"}},{path:"change-password",loadComponent:()=>import("./chunk-N2SPSVCM.js").then(o=>o.ChangePassword),data:{title:"Change Password"}}];export{t as ADMINLAYOUT_ROUTES};
