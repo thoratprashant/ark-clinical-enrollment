@@ -11,5 +11,10 @@ export const ADMINLAYOUT_ROUTES: Routes = [
     loadComponent: () => import('./change-password/change-password').then(c => c.ChangePassword),
     data: { title: 'Change Password' }
   },
+  {
+    path: 'manage-sessions',
+    loadComponent: () => import('./manage-sessions/manage-sessions').then(c => c.ManageSessions),
+    data: { title: 'Manage Sessions' }
+  },
 ];
  
