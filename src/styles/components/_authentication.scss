@@ -26,14 +26,12 @@
                 font-size: 2rem; 
             }
             p{
-                margin-bottom: 3rem;
-                font-size: 0.875rem;
+                margin-bottom: 3rem; 
                 color: #425583;
             } 
 
             .form-control { 
-                border-color: #D3E0FE !important ; 
-                font-size: 0.875rem;
+                border-color: #D3E0FE !important ;  
                 font-family: "Inter", sans-serif;
                 font-weight: 400;
                 color: #231F20;
@@ -96,7 +94,8 @@
         font-size: 17px;
     }
     .auth-container .auth-right .login--wrapper p{
-        font-size: 12px;
+        font-size: 11px !important;
+        margin-bottom: 20px;
     }
 } 
 @media only screen and (min-width: 980px) and (max-width: 1279px){

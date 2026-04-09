@@ -1,7 +1,7 @@
  <div class="login--wrapper d-flex flex-column">
 
    <h2 class="fw-medium mb-1 text-secondary">Login</h2>
-   <p class="mb-4">Access your account to continue</p>
+   <p class="font-16">Access your account to continue</p>
 
    <form [formGroup]="form" (ngSubmit)="submit()">
      <div class="row">
@@ -58,14 +58,14 @@
        <!-- Remember + Forgot -->
        <div class="col-12 d-flex align-items-center justify-content-between mb-4">
          <mat-checkbox>Remember me</mat-checkbox>
-         <a class="text-primary font-plus-jakarta font-14" routerLink="/auth/forgot-password">
+         <a class="text-primary font-plus-jakarta font-16" routerLink="/auth/forgot-password">
            Forgot Password?
          </a>
        </div>
 
        <!-- Buttons -->
        <div class="col-12">
-         <div class="d-flex align-items-center button--group" [ngClass]="{ 'disabled': form.invalid }">
+         <div class="d-flex align-items-center button--group" [ngClass]="{ 'disabled': form.invalid }"  routerLink="/admin/change-password">
            <button type="submit" class="btn btn-primary w-100">
              Sign in
            </button>
