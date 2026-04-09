@@ -42,7 +42,7 @@
                2 hours ago
              </li>
            </ul>
-           <div class="thisdevice font-14 font-mono-light mt-2 mt-sm-0">
+           <div class="thisdevice font-14 font-mono-light mt-2 mt-sm-0 flex-shrink-0">
              This device
            </div>
          </div>
@@ -75,7 +75,7 @@
            <div class="thisdevice font-14 font-mono-light mt-2 mt-sm-0" *ngIf="">
              This device
            </div>
-           <button type="button" class="btn btn-primary btn-md d-flex align-items-center">
+           <button type="button" class="btn btn-primary btn-md d-flex align-items-center" (click)="logout()">
              <mat-icon class="me-2">power_settings_new</mat-icon>
              Logout
            </button>
@@ -109,7 +109,7 @@
            <div class="thisdevice font-14 font-mono-light mt-2 mt-sm-0" *ngIf="">
              This device
            </div>
-           <button type="button" class="btn btn-primary btn-md d-flex align-items-center">
+           <button type="button" class="btn btn-primary btn-md d-flex align-items-center" (click)="logout()">
              <mat-icon class="me-2">power_settings_new</mat-icon>
              Logout
            </button>

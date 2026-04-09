@@ -1,0 +1,11 @@
+h1{
+    font-size: 24px;
+    margin: 10px 0 4px 0;
+    color: #1A1A1A;
+}
+ @media (max-width: 767px) {
+    h1{
+        font-size: 18px;
+        margin: 10px 0 4px 0; 
+    }
+ }

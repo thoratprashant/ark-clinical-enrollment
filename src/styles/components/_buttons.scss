@@ -22,10 +22,18 @@ body{
         &.btn-light{
             background-color: #F8F9FA;
         }  
+        &.btn-secondary{
+            background-color: #5594F9;
+            border-color: #5594F9;  
+        }
         &.btn-md{
              min-height: 36px;
              font-size: 14px;
              padding: .2rem 1.4rem;
+             &.sub--round--btn{
+                width: 36px;
+                height: 36px; 
+            }
         }
     }
 
@@ -35,6 +43,10 @@ body{
             height: 1rem;
             background-color: v.$primary;
             margin: 0 -4px;
+            &.connecter-secondary{
+                background-color:#5594F9;
+                border-color: #5594F9; 
+            }
         }
         .sub--round--btn{
             width: 48px;
@@ -46,6 +58,11 @@ body{
             .connecter{
                 background-color:#274d9f;
                 border-color: #274d9f; 
+            }
+            .btn-secondary,
+            .connecter-secondary{
+                background-color: #3a7eea;
+                border-color: #3a7eea;  
             }
         }
         &.disabled{

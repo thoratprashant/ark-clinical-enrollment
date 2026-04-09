@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { Logout } from '../../comman/logout/logout';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-manage-sessions',
@@ -11,28 +13,13 @@ import { RouterLink } from '@angular/router';
   styleUrl: './manage-sessions.scss',
 })
 export class ManageSessions {
-sessions = [
-  {
-    device: 'Chrome on MacBook Pro',
-    deviceType: 'desktop',
-    location: 'San Francisco, CA, United States',
-    ip: '192.168.1.105',
-    lastActive: '2 hours ago',
-    isCurrentSession: true,
-    isThisDevice: true
-  },
-  {
-    device: 'Safari on iPhone 15',
-    deviceType: 'mobile',
-    location: 'San Francisco, CA, United States',
-    ip: '192.168.1.106',
-    lastActive: '5 hours ago',
-    isCurrentSession: false,
-    isThisDevice: false
-  }
-];
+   readonly dialog = inject(MatDialog);
 
-logoutSession(session: any) {
-  console.log('Logout:', session);
-}
+  logout() { 
+    this.dialog.open(Logout, {
+      width: '384px',
+      panelClass: 'modal--wrapper',
+      autoFocus: false, 
+    });
+  }
 }
