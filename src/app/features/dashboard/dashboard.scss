@@ -1,0 +1,58 @@
+.dashboard--dayone{
+     height: calc(100vh - 105px);
+     .dd--outer{
+        max-width: 448px;
+     }
+    .ico{
+        width: 96px;
+        height: 96px;
+        background-color: #183887;
+        border-radius: 9999px; 
+    }
+    h1{
+        margin: 24px 0 30px 0;
+        font-size: 24px;
+        color: #171717;
+    }
+    p{
+        margin-bottom: 32px;
+        color: #525252;
+    }
+    .auto--sync{
+        border-radius: 8px;
+        border: 1px solid #E5E5E5;
+        background: #CA9551;
+        padding: 25px;
+        margin-bottom: 24px;
+        p{
+            color: #fff;
+        }
+    }
+}
+
+ @media (max-width: 767px) {
+    .dashboard--dayone{
+        .ico{
+            width: 55px;
+            height: 55px; 
+            img{
+                width: 45%;
+            }
+        }
+        h1{
+            margin: 14px 0;
+            font-size: 18px;
+        }
+        p{
+            margin-bottom: 20px;
+        }
+        .auto--sync{
+            padding: 14px;
+        }
+    }
+ }
+ @media screen and (orientation:landscape) and (max-width: 850px){
+    .dashboard--dayone{
+     height: unset
+    }
+ }
