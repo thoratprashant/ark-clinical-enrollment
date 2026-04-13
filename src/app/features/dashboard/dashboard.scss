@@ -9,13 +9,7 @@
         background-color: #183887;
         border-radius: 9999px; 
     }
-    h1{
-        margin: 24px 0 30px 0;
-        font-size: 24px;
-        color: #171717;
-    }
-    p{
-        margin-bottom: 32px;
+    p{ 
         color: #525252;
     }
     .auto--sync{
@@ -26,6 +20,61 @@
         margin-bottom: 24px;
         p{
             color: #fff;
+            margin-bottom: 32px;
+        }
+    }
+}
+
+h1{
+    margin: 24px 0 30px 0;
+    font-size: 24px;
+    color: #171717;
+}
+
+
+// Day Two
+
+.dashboard--daytwo{
+    height: calc(100vh - 105px);
+    .tick--round {
+        width: 80px;
+        height: 80px;
+        border-radius: 100px;
+        background-color: #28BE8B;
+        .mat-icon{
+            font-size: 33px;
+            width: 33px;
+            height: 33px;
+            color: #231F20;
+            font-weight: 600;
+        }
+    } 
+    p{
+        margin-bottom: 26px;
+        color: #231F20;
+    }
+    .info{
+        border-radius: 8px;
+        background:#28BE8B;
+        padding: 24px; 
+        margin-bottom: 24px;
+        p{
+            color: #fff;
+        }
+    }
+    .statuses{
+        margin-top: 70px;
+        .s--box{
+            border-radius: 8px;
+            border: 1px solid #183887;
+            background: #FFF;
+            padding: 25px;
+        }
+        .stat--icons{
+            border-radius: 8px; 
+            background: rgba(85, 148, 249, 0.30);
+            width: 48px;
+            height: 48px;
         }
     }
 }
@@ -38,21 +87,37 @@
             img{
                 width: 45%;
             }
-        }
-        h1{
-            margin: 14px 0;
-            font-size: 18px;
+        } 
+        .auto--sync{
+            padding: 14px;
         }
         p{
             margin-bottom: 20px;
         }
-        .auto--sync{
-            padding: 14px;
+    }
+    h1{
+        margin: 14px 0;
+        font-size: 18px;
+    }
+    .dashboard--daytwo{
+        height: unset;
+        .info{
+            padding: 12px;
+            margin-bottom: 16px;
+        }
+        .statuses {
+            margin-top: 30px;
+        }
+        .tick--round{
+            width: 55px;
+            height: 55px;
         }
     }
+    
  }
  @media screen and (orientation:landscape) and (max-width: 850px){
+    .dashboard--daytwo,
     .dashboard--dayone{
-     height: unset
+        height: unset
     }
  }

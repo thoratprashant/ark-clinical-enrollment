@@ -10,5 +10,9 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './dashboard.scss',
 })
 export class Dashboard {
+  dashboardView = true;
 
+  showDayTwo() {
+    this.dashboardView = !this.dashboardView;
+  }
 }
