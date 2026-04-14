@@ -21,4 +21,9 @@ export const routes: Routes = [
     loadComponent: () => import('./layouts/admin-layout/admin-layout').then(c => c.AdminLayout),
     loadChildren: () =>  import('./features/dashboard/dashboard.routes').then(r => r.DASHBOARDLAYOUT_ROUTES),
   }, 
+  {
+    path: '**',
+    loadComponent: () => import('./layouts/admin-layout/admin-layout').then(c => c.AdminLayout),
+    loadChildren: () =>  import('./features/system-error/system-error.routes').then(r => r.SYSTEMERRORLAYOUT_ROUTES),
+  }, 
 ];
