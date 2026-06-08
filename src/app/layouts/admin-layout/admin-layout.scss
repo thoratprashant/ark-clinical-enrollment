@@ -23,24 +23,32 @@
         display: flex;
         align-items: center;
         gap: 1.5rem;
+
+        .btn-group{
+            .dropdown-toggle{
+                &::after{
+                    content: unset;
+                }
+            }
+        }
          
-        .notifications{
-            .mat-icon{
-                color: #525252; 
-            }
-            .badge-indicator{
-                width: 8px;
-                height: 8px;
-                background-color: #171717;
-                border-radius: 20px;
-                position: absolute;
-                right: 11px;
-                top: 10px;
-            }
-        } 
+        // .notifications{
+        //     .mat-icon{
+        //         color: #525252; 
+        //     }
+        //     .badge-indicator{
+        //         width: 8px;
+        //         height: 8px;
+        //         background-color: #171717;
+        //         border-radius: 20px;
+        //         position: absolute;
+        //         right: 11px;
+        //         top: 10px;
+        //     }
+        // } 
         .user--profile--round{
-            width: 2.5rem;
-            height: 2.5rem;
+            width: 2.1rem;
+            height: 2.1rem;
             border-radius: 624.9375rem;
             border: 2px solid #DEE2E6; 
             cursor: pointer;
@@ -49,11 +57,11 @@
                 max-height: 100%;
             }
         }
-        .user--name{
-            max-width: 150px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
+        // .user--name{
+        //     max-width: 150px;
+        //     overflow: hidden;
+        //     text-overflow: ellipsis;
+        // }
         &.menus-desktop{
            ul{
             list-style-type: none;
@@ -62,16 +70,17 @@
                     font-size: 14px;
                     font-weight: 500;  
                     text-transform: capitalize;
-                    border-radius: 8px;
-                    border: 1px solid transparent;
-                    color: #505050 !important;      
+                    border-radius: 6px;
+                    border: 1px solid #DCDFE4;
+                    color: #6B7280;      
                     background-color: transparent;  
-                    padding: 9px 18px;      
+                    padding: 6px 15px;      
                 }
                 &.active{
                     a{ 
-                        background-color: #EDF4FF;
-                        color: #0032a0 !important;
+                        border-color: #183887;
+                        background-color: #183887;
+                        color: #fff;
                     }
                 }
             }
@@ -86,6 +95,9 @@
         background: none;
         border: none;
         color: white;
+        color: #214192 !important;
+        border: 1px solid #214192 !important;
+        border-radius: 6px; 
     }
 } 
 
@@ -112,11 +124,12 @@
     nav {
         display: flex;
         flex-direction: column; 
+        padding-top: 34px;
         a{
-            padding: 10px 15px;
-            font-size: 14px;
+            padding: 7px 15px;
+            font-size: 12px;
             border-bottom: 1px solid #e6e2e2;
-            color: #cbd5f5;
+            color: #000;
         }
     } 
 }
@@ -139,17 +152,33 @@
 @media (max-width: 768px) {
   .nav-desktop {
     display: none !important;
-  } 
-  .menu-btn {
-        display: block !important;
-        color: #214192 !important;
-        border: 1px solid #214192 !important;
-        border-radius: 6px; 
-  }
+  }  
   .topbar{
     padding: 0.6rem 1rem!important;
+        .menu-btn {
+            display: block; 
+        }
   }
   .content{
     padding: 4.75rem 1rem 1rem ;
   }
+}
+
+@media screen and (orientation:landscape) and (max-width: 850px){
+    .topbar{
+        padding: 0.6rem 1rem!important;
+            .menu-btn {
+                display: block; 
+            }
+            .nav-desktop{
+                display: none;
+            }
+
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  /* iPad portrait styles */
+}
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* iPad landscape styles */
 }

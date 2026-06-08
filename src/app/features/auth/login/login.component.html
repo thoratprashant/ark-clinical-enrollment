@@ -3,7 +3,7 @@
    <h2 class="fw-medium mb-1 text-secondary">Login</h2>
    <p class="font-16">Access your account to continue</p>
 
-   <form [formGroup]="form" (ngSubmit)="submit()">
+   <form [formGroup]="form" (ngSubmit)="submit()"  data-aos="fade-up" data-aos-duration="500">
      <div class="row">
 
        <!-- Email -->
@@ -65,7 +65,7 @@
 
        <!-- Buttons -->
        <div class="col-12">
-         <div class="d-flex align-items-center button--group" [ngClass]="{ 'disabled': form.invalid }"  routerLink="/admin/change-password">
+         <div class="d-flex align-items-center button--group" [ngClass]="{ 'disabled': form.invalid }"  routerLink="/admin/dashboard">
            <button type="submit" class="btn btn-primary w-100">
              Sign in
            </button>

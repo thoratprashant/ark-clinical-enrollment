@@ -10,7 +10,7 @@ html, body {
 a { 
   text-decoration: none !important;
   cursor: pointer;
-  color: v.$primary !important;
+  color: v.$primary ;
 } 
 
 $font-family-base: 'mono-light', sans-serif;
@@ -22,7 +22,6 @@ body{
   .font-mono-light{font-family: v.$font-family-base !important; }
   .font-plus-jakarta{font-family: v.$font-plus-jakarta !important; }
   .font-inter{font-family: v.$font-inter !important; }
-
 
   .text-primary { color: v.$primary !important; }
   .text-secondary{ color: v.$secondary !important;}

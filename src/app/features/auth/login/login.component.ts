@@ -6,6 +6,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { Router, RouterLink } from '@angular/router';  
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-login',
@@ -37,6 +38,13 @@ submit() {
     this.form.markAllAsTouched();
     return;
   }
+}
+ngAfterViewInit(): void {
+	AOS.init({
+	  duration: 1000,
+	  once: true
+	}); 
+	AOS.refresh();
 } 
 
   

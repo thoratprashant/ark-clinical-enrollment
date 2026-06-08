@@ -5,34 +5,36 @@
   </div>
 
   <div class="nav-desktop menus-desktop">
-    <ul class="m-0 p-0 d-flex ">
-        <!-- <li routerLinkActive="active"><a routerLink="/admin/user-managment">User Management</a></li>
-        <li routerLinkActive="active"><a routerLink="/admin/user-managment2">Analytics</a></li>
-        <li><a>Patients</a></li> -->
+    <ul class="m-0 p-0 d-flex gap-2 font-inter">
+        <li class="active"><a>To-Do's</a></li>
+        <!-- <li routerLinkActive="active"><a routerLink="/admin/user-managment">To-Do's</a></li> -->
+        <li routerLinkActive="active"><a routerLink="/admin/user-managment2">All Referrals</a></li>
+        <li routerLinkActive="active"><a routerLink="/admin/user-managment3">Reports</a></li>
+        <li routerLinkActive="active"><a routerLink="/admin/user-managment4">Rewards</a></li>
+        <li routerLinkActive="active"><a routerLink="/admin/user-managment5">Leaderboard</a></li> 
     </ul>
   </div>
 
   <!-- Desktop Nav -->  
   <nav class="nav-desktop"> 
-    <div class="notifications position-relative">
+    <!-- <div class="notifications position-relative">
         <button matIconButton aria-label="notification">
             <mat-icon fontSet="material-icons-outlined">notifications</mat-icon>  
             <div class="badge-indicator"></div>
-        </button>
-
-    </div>
+        </button> 
+    </div> -->
 
     <div class="btn-group"> 
         <div class="dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-            <div class="user--profile--round me-2">
+            <div class="user--profile--round">
                 <img src="images/users/avatar-1.jpg" alt="user img" class="img-fluid">
             </div>
-            <div class="d-flex flex-column">
+            <!-- <div class="d-flex flex-column">
               <h6 class="font-13 m-0 text-black user--name font-inter">Dr. Sarah Wilson</h6>
               <p class="m-0 font-12 font-inter text-secondary">Site Coordinator</p>
-            </div>
+            </div> -->
         </div>
-        <ul class="dropdown-menu dropdown-menu-lg-end p-0"> 
+        <ul class="dropdown-menu dropdown-menu-lg-end p-0 font-inter"> 
             <li>
                 <button class="dropdown-item d-flex align-items-center" type="button" routerLink="/admin/profile">
                     <mat-icon>account_circle</mat-icon>
