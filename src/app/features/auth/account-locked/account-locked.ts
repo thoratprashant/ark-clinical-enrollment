@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-account-locked',
@@ -19,6 +20,13 @@ export class AccountLocked implements OnInit, OnDestroy{
   ngOnInit(): void {
     this.totalSeconds = this.minutes * 60 + this.seconds;
     this.startTimer();
+  }
+  ngAfterViewInit(): void {
+    AOS.init({
+      duration: 1000,
+      once: true
+    }); 
+    AOS.refresh();
   }
 
   startTimer(): void {
