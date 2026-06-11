@@ -10,6 +10,71 @@
             top: 11%;
             width: 43%;
         }
+    
+        .typing-gradient-title {
+            color: #fff;
+            font-size: 64px;
+            position: absolute;
+            left: 13%;
+            top: 11%;
+            // width: 43%;  
+            line-height: 1.25;
+        }
+
+        .typing-line {
+            display: block;
+            width: 0;
+            max-width: max-content;
+            overflow: hidden;
+            white-space: nowrap;
+
+            background: linear-gradient(
+                180deg,
+                #ffffff 0%,
+                #dce7ff 45%,
+                #9fbaff 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+
+            animation-name: typingLine;
+            animation-timing-function: steps(var(--chars), end);
+            animation-duration: var(--duration);
+            animation-delay: var(--delay);
+            animation-fill-mode: forwards;
+        }
+
+        .typing-line--1 {
+        --chars: 10;
+        --duration: 0.9s;
+        --delay: 0s;
+        }
+
+        .typing-line--2 {
+        --chars: 10;
+        --duration: 0.9s;
+        --delay: 0.9s;
+        }
+
+        .typing-line--3 {
+        --chars: 9;
+        --duration: 0.8s;
+        --delay: 1.8s;
+        }
+
+        @keyframes typingLine {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 100%;
+        }
+        }
+
+        
+ 
     }
     .auth-right {
         width: 50%; 
