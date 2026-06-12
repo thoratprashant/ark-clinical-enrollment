@@ -14,15 +14,7 @@
             width: auto; 
             object-fit: contain;
             margin-inline: auto;
-        }
-        h1{
-            color: #fff;
-            font-size: 64px;
-            position: absolute;
-            left: 13%;
-            top: 11%;
-            width: 43%;
-        }
+        } 
     
         .typing-gradient-title {
             color: #fff;
@@ -30,7 +22,7 @@
             position: absolute;
             left: 13%;
             top: 11%;
-            // width: 43%;  
+            width: 43%;  
             line-height: 1.25;
         }
 
@@ -147,9 +139,12 @@
 
  
 @media (max-width: 767px) {
+    .auth-container{
+        height: unset;
+    }
     .auth-container .auth-right .ar--inner,
     .auth-container .auth-left{
-        padding:2rem ;
+        padding:1.2rem ;
         min-height: unset !important;
     }  
     .auth-container .auth-left h1 {
@@ -162,6 +157,7 @@
     } 
     .auth-container .auth-right{
         width: 100%;
+        height: unset;
     }  
     .auth-container .auth-right .login--wrapper h2 {
         font-size: 1rem;
@@ -177,6 +173,20 @@
         font-size: 11px !important;
         margin-bottom: 20px;
     }
+    .auth-container .auth-left{
+        height: 284px;
+        width: 100%;
+    }
+    .auth-container .auth-left .left--bg{
+        width: 70%;
+        height: unset;
+    }
+    .auth-container .auth-left .typing-gradient-title{
+        left: 27%;
+        top: 18%;
+        width: 50%;
+        font-size: 16px;
+    }
 } 
 @media only screen and (min-width: 980px) and (max-width: 1279px){
      
@@ -190,6 +200,12 @@
     .auth-container .auth-left p {
         font-size: 1rem;
         margin-bottom: 2rem;
+    }
+    .auth-container .auth-left .typing-gradient-title{
+        left: 15%;
+        top: 18%;
+        width: 43%;
+        font-size: 48px;
     }
 }
 @media only screen and (min-width: 1280px) and (max-width: 1440px){
@@ -205,11 +221,23 @@
         font-size: 1rem;
         margin-bottom: 2rem;
     }
+    .auth-container .auth-left .typing-gradient-title{
+        left: 15%;
+        top: 18%;
+        width: 50%;
+        font-size: 48px;
+    }
 }
 @media only screen and (min-width: 1500px) and (max-width: 1776px){
      
     .auth-container .auth-right .ar--inner {
         padding: 1rem 6rem;
+    }
+    .auth-container .auth-left .typing-gradient-title{
+        left: 15%;
+        top: 18%;
+        width: 43%;
+        font-size: 48px;
     }
 }
 @media screen and (orientation:landscape) and (max-width: 850px){
@@ -251,6 +279,12 @@
     .auth-container .auth-right {
         width: 46%;
     } 
+    .auth-container .auth-left .typing-gradient-title{
+        left: 21%;
+        top: 38%;
+        width: 50%;
+        font-size: 24px;
+    }
 }
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
      .auth-container .auth-left { 
@@ -268,6 +302,12 @@
     }  
     .auth-container .auth-right .ar--inner{
         max-height: unset;
+    }
+    .auth-container .auth-left .typing-gradient-title{
+        left: 21%;
+        top: 28%;
+        width: 50%;
+        font-size: 30px;
     }
 }
 
