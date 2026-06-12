@@ -1,17 +1,14 @@
 <div class="auth-container d-flex flex-column flex-sm-row">
-  <div class="auth-left d-flex flex-column min-vh-100 w-100 justify-content-center">
-    <!-- <img src="images/auth-left.png" alt="img" class="img-fluid">
-    <img src="images/auth-left-login.png" alt="img" class="img-fluid"> -->
-
+  <div class="auth-left d-flex flex-column justify-content-center"> 
     @if (isLoginPage) {
-      <img src="images/auth-left-login.png" alt="login" class="img-fluid">
+      <img src="images/auth-left-login.png" alt="login" class="img-fluid left--bg">
       <h1 class="typing-gradient-title">
         <span class="typing-line typing-line--1">Start Your</span>
         <span class="typing-line typing-line--2">Enrollment</span>
         <span class="typing-line typing-line--3">Journey!!</span>
       </h1>
     } @else {
-      <img src="images/auth-left.png" alt="default" class="img-fluid">
+      <img src="images/auth-left.png" alt="default" class="img-fluid left--bg">
     }
 
   </div>
