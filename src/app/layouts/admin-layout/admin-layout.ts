@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import {MatBadgeModule} from '@angular/material/badge';
+import { MatDialog } from '@angular/material/dialog';
+import { Logout } from '../../features/comman/logout/logout';
 
 @Component({
   selector: 'app-admin-layout',
@@ -13,6 +15,7 @@ import {MatBadgeModule} from '@angular/material/badge';
   styleUrl: './admin-layout.scss',
 })
 export class AdminLayout {
+  readonly dialog = inject(MatDialog);
   mobileMenuOpen = signal(false);
 
   toggleMenu() {
@@ -21,5 +24,13 @@ export class AdminLayout {
 
   closeMenu() {
     this.mobileMenuOpen.set(false);
+  }
+
+  logout(){
+    this.dialog.open(Logout, {
+      width: '450px',
+      panelClass: 'modal--wrapper',
+      autoFocus: false, 
+    });
   }
 }

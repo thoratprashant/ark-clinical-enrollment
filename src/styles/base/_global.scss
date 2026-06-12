@@ -86,11 +86,11 @@ body{
     font-weight: 400;
     color: #141414; 
     border: 1px solid rgba(26, 26, 26, 0.10);
-    background: rgba(242, 240, 233, 0.50);
+    background: #fff;
 
     &:focus{
       box-shadow: none;
-      background: rgba(242, 240, 233, 0.50);
+      background: #fff;
       border-color: #03514B !important; 
     }
     &.is-invalid{
@@ -100,7 +100,7 @@ body{
       padding-right: 0.75rem !important; 
     } 
     &:disabled{
-      background-color: #fff;
+      background-color: #F4F5F8;
       color: #AEAEAE;
     }
   }

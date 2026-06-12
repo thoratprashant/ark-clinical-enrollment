@@ -17,7 +17,7 @@ export class ManageSessions {
 
   logout() { 
     this.dialog.open(Logout, {
-      width: '384px',
+      width: '450px',
       panelClass: 'modal--wrapper',
       autoFocus: false, 
     });

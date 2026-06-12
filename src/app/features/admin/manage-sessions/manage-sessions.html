@@ -72,7 +72,7 @@
            <div class="thisdevice font-14 font-mono-light mt-2 mt-sm-0" *ngIf="">
              This device
            </div>
-           <button type="button" class="btn btn-primary btn-md d-flex align-items-center" (click)="logout()">
+           <button type="button" class="btn btn-primary btn-md d-flex align-items-center rounded-2 px-2" (click)="logout()">
              <mat-icon class="me-2">power_settings_new</mat-icon>
              Logout
            </button>
@@ -103,7 +103,38 @@
            <div class="thisdevice font-14 font-mono-light mt-2 mt-sm-0" *ngIf="">
              This device
            </div>
-           <button type="button" class="btn btn-primary btn-md d-flex align-items-center" (click)="logout()">
+           <button type="button" class="btn btn-primary btn-md d-flex align-items-center rounded-2 px-2" (click)="logout()">
+             <mat-icon class="me-2">power_settings_new</mat-icon>
+             Logout
+           </button>
+         </div>
+       </div>
+              <div class="session--box d-flex flex-column font-plus-jakarta">
+         <div class="d-flex align-items-start flex-column flex-sm-row w-100 mb-3 mb-sm-4">
+           <div class="d-flex align-items-center">
+             <mat-icon class="me-2 clr--525252 flex-shrink-0">smartphone</mat-icon>
+             <h5 class="m-0 font-16">Safari on iPhone 15</h5>
+           </div> 
+         </div>
+         <div class="d-flex flex-column flex-sm-row align-items-start justify-content-between w-100 s-details">
+           <ul class="m-0 p-0">
+             <li class="d-flex align-items-center font-14 mb-2">
+               <mat-icon class="me-2 clr--525252 flex-shrink-0">location_on</mat-icon>
+               San Francisco, CA, United States
+             </li>
+             <li class="d-flex align-items-center font-14 mb-2">
+               <mat-icon class="me-2 clr--525252 flex-shrink-0">language</mat-icon>
+               192.168.1.105
+             </li>
+             <li class="d-flex align-items-center font-14">
+               <mat-icon class="me-2 clr--525252 flex-shrink-0">schedule</mat-icon>
+               2 hours ago
+             </li>
+           </ul>
+           <div class="thisdevice font-14 font-mono-light mt-2 mt-sm-0" *ngIf="">
+             This device
+           </div>
+           <button type="button" class="btn btn-primary btn-md d-flex align-items-center rounded-2 px-2" (click)="logout()">
              <mat-icon class="me-2">power_settings_new</mat-icon>
              Logout
            </button>

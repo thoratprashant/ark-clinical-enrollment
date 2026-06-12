@@ -25,16 +25,17 @@
     .user--details--box{
         border-radius: 12px;
         background: #F2F0E9;
-        padding: 24px 44px;
+        padding: 24px;
         .pp--round{ 
             width: 80px;
             height: 80px; 
-            background: rgba(75, 127, 213, 0.30);
+            background: radial-gradient(circle at 45% 35%, #3f6fbd 0%, #315eaa 45%, #214987 100%);
             overflow: hidden;
             .mat-icon{
                 font-size: 40px;
                 height: 40px;
                 width: 40px;
+                color: #fff;
             } 
         }
         .user--info{

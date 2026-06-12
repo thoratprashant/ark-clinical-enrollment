@@ -26,6 +26,15 @@ body{
             background-color: #5594F9;
             border-color: #5594F9;  
         }
+        &.btn-lg{
+             min-height: 40px;
+             font-size: 14px;
+             padding: .2rem 1.4rem;
+             &.sub--round--btn{
+                width: 40px;
+                height: 40px; 
+            }
+        }
         &.btn-md{
              min-height: 36px;
              font-size: 14px;
