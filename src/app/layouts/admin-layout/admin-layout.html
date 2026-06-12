@@ -63,8 +63,8 @@
     <!-- <img src="images/logo.webp" alt="img" class=""> -->
   </div>
   <nav> 
-    <a routerLink="/admin/users" (click)="closeMenu()">Profile</a> 
-    <a routerLink="/admin/users" (click)="closeMenu()">Logout</a>
+    <a routerLink="/admin/users" (click)="closeMenu()"  routerLink="/admin/profile">Profile</a> 
+    <a routerLink="/admin/users" (click)="closeMenu()" (click)="logout()">Logout</a>
   </nav>
 </aside>
 

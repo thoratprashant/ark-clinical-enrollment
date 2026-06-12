@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { Logout } from '../../comman/logout/logout';
 import { MatDialog } from '@angular/material/dialog';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-manage-sessions',
@@ -21,5 +22,12 @@ export class ManageSessions {
       panelClass: 'modal--wrapper',
       autoFocus: false, 
     });
+  }
+  ngAfterViewInit(): void {
+    AOS.init({
+      duration: 1000,
+      once: true
+    }); 
+    AOS.refresh();
   }
 }

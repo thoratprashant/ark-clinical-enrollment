@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AlertDialog } from '../../comman/alert-dialog/alert-dialog'; 
 import { RouterLink } from '@angular/router';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-profile',
@@ -17,6 +18,13 @@ export class Profile {
 
   readonly dialog = inject(MatDialog);
 
+  ngAfterViewInit(): void {
+    AOS.init({
+      duration: 1000,
+      once: true
+    }); 
+    AOS.refresh();
+}
  
  
 
