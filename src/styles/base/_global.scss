@@ -41,6 +41,12 @@ body{
   .clr--E24A3B{color: #E24A3B !important;}
   .clr--C79857{color: #C79857 !important;}
   .clr--5594F9{color: #5594F9 !important;}
+  .clr--1FAD91{color: #1FAD91 !important;}
+  .clr--0F1729{color: #0F1729 !important;}
+  .clr--070707{color: #070707 !important;}
+  .clr--475569{color: #475569 !important;}
+  .clr--1a1a1a{color: #1a1a1a !important;}
+  .clr--gray{color: #1a1a1a66 !important;}
 
   // Angular Material 
   .mat-internal-form-field>label{
@@ -110,6 +116,132 @@ body{
       color: #AEAEAE;
     }
   }
+
+  .form-select{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #DCDFE4;
+    background-color: #F4F5F8;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    color: #0F1729 !important;
+    font-size: 12px;
+    font-weight: 400;
+    text-overflow: ellipsis;
+
+    &:focus{
+      box-shadow: none;
+      background-color: #fff;
+      border-color: #03514B !important; 
+    }
+    &.is-invalid{
+      border-color: v.$error !important;
+      box-shadow: none !important;
+      background-image: none !important;  
+      padding-right: 0.75rem !important; 
+    } 
+    &:disabled{
+      background-color: #F4F5F8;
+      color: #AEAEAE;
+    }
+  }
+
+  .mat-mdc-form-field{
+    box-shadow: none;
+    border: none;
+    font-family: v.$font-plus-jakarta !important;
+    .mat-mdc-text-field-wrapper {
+      border-radius: 10px;
+      background: #F4F5F8;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+    .mdc-notched-outline__leading,
+    .mdc-notched-outline__notch,
+    .mdc-notched-outline__trailing {
+        border-color: #dcdfe4 !important;
+        border-width: 1px !important;
+    } 
+    .mat-mdc-form-field-subscript-wrapper{
+      display: none;
+    }
+    .mat-mdc-select-placeholder,
+    .mat-mdc-select-value,
+    .mdc-text-field__input{
+        font-family: v.$font-plus-jakarta !important; 
+        font-size: 12px;
+        color: #0F1729;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden; 
+    }
+    .mat-mdc-form-field-infix{
+      padding-top: 13px;
+      padding-bottom: 13px;
+      min-height: 48px;
+    }
+    .mat-mdc-option{
+      font-family: v.$font-plus-jakarta !important; 
+      font-size: 14px;
+      color: #0F1729;
+      min-height: 0px;
+      padding: 12px;
+      .mdc-list-item__primary-text{
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .mat-pseudo-checkbox-minimal{
+        display: none;
+      }
+    }
+    &.mat-focused {
+        .mat-mdc-text-field-wrapper {
+            background: #ffffff !important;
+        }
+        .mdc-notched-outline__leading,
+        .mdc-notched-outline__notch,
+        .mdc-notched-outline__trailing {
+            border-color: #03514b !important;
+        }
+    }
+    // Hover
+    &:hover {
+        .mdc-notched-outline__leading,
+        .mdc-notched-outline__notch,
+        .mdc-notched-outline__trailing {
+            border-color: #cfd4dc !important;
+        }
+    }
+    // Disabled
+    &.mat-form-field-disabled {
+        .mat-mdc-text-field-wrapper {
+            background: #f4f5f8 !important;
+        }
+        .mat-mdc-select-value-text {
+            color: #aeaeae !important;
+        }
+    }
+  }
+
+  .owl-dt-container{
+    font-size: 13px;
+    max-height: 320px;
+    overflow: auto;
+    .owl-dt-calendar{
+      height: auto;
+    }
+    .owl-dt-calendar-main{
+      // max-height: 180px;
+      // overflow-y: auto;
+    }
+
+    .owl-dt-timer-content{
+      .owl-dt-timer-input{
+        font-size: 13px;
+      }
+    }
+  }
+
   .input--prefix{
     .mat-icon {
       position: absolute;

@@ -16,6 +16,8 @@
 
 /* Angulr Material */
 @use '@angular/material/prebuilt-themes/indigo-pink.css'; 
+
+@import '@danielmoncada/angular-datetime-picker/assets/style/picker.min.css';
  
 .route--wrapper > * {
   animation: showPageAnim 1000ms ease-out;
