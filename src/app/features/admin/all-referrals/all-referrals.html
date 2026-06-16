@@ -8,47 +8,47 @@
                             <img src="images/mission-control-top.svg" alt="img" class="img-fluid">
                             <p class="font-14 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Mission Control</p>
                         </div>
-                        <h2 class="text-white fw-bold mb-0">You're on a <span class="clr--F9712A">{{ totalStreak | number:'1.0-0' }}-day streak!</span></h2>
+                        <h2 class="text-white fw-bold mb-0" [class.card-visible]="missioncardVisible[0]">You're on a <span class="clr--F9712A">{{ totalStreak | number:'1.0-0' }}-day streak!</span></h2>
                         <p class="font-16 fw-normal clr--ffffffb3 mb-0">3 more Gold saves this week to unlock the <span class="clr--F9712A">Legend Badge</span>. Keep the momentum!</p>
                     </div>
-                    <div class="d-flex flex-row align-items-stretch section-sub-cards">
+                    <div data-aos="fade-up" data-aos-duration="1000" class="d-flex flex-row align-items-stretch section-sub-cards">
                         <div class="backdrop-card d-flex">
-                            <div class="card-1 d-flex flex-column align-items-center text-center gap-2 mb-0">
+                            <div class="card-1 d-flex flex-column align-items-center text-center gap-2 mb-0" [class.card-visible]="missioncardVisible[1]">
                                 <img src="images/day-streak-top.svg" alt="img" class="img-fluid">
                                 <p class="text-white font-24 fw-normal mb-0 font-mono-light">{{ dayStreak | number:'1.0-0' }}</p>
                                 <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Day Streak</p>
                             </div>
                         </div>
                         <div class="backdrop-card d-flex">
-                            <div class="card-1 d-flex flex-column align-items-center text-center gap-2 mb-0">
+                            <div class="card-1 d-flex flex-column align-items-center text-center gap-2 mb-0" [class.card-visible]="missioncardVisible[2]">
                                 <img src="images/gold-saves-top.svg" alt="img" class="img-fluid">
                                 <p class="text-white font-24 fw-normal mb-0 font-mono-light">{{ goldSaves | number:'1.0-0' }}</p>
                                 <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Gold Saves</p>
                             </div>
                         </div>
                         <div class="backdrop-card d-flex">
-                            <div class="card-1 d-flex flex-column align-items-center text-center gap-2 mb-0">
+                            <div class="card-1 d-flex flex-column align-items-center text-center gap-2 mb-0" [class.card-visible]="missioncardVisible[3]">
                                 <img src="images/silver-saves-top.svg" alt="img" class="img-fluid">
                                 <p class="text-white font-24 fw-normal mb-0 font-mono-light">{{ silverSaves | number:'1.0-0' }}</p>
                                 <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Silver Saves</p>
                             </div>
                         </div>
                         <div class="backdrop-card d-flex">
-                            <div class="card-1 d-flex flex-column align-items-center text-center gap-2 mb-0">
+                            <div class="card-1 d-flex flex-column align-items-center text-center gap-2 mb-0" [class.card-visible]="missioncardVisible[4]">
                                 <img src="images/bronze-saves-top.svg" alt="img" class="img-fluid">
                                 <p class="text-white font-24 fw-normal mb-0 font-mono-light">{{ bronzeSaves | number:'1.0-0' }}</p>
                                 <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Bronze Saves</p>
                             </div>
                         </div>
                         <div class="backdrop-card d-flex">
-                            <div class="card-1 d-flex flex-column align-items-center text-center gap-2 mb-0">
+                            <div class="card-1 d-flex flex-column align-items-center text-center gap-2 mb-0" [class.card-visible]="missioncardVisible[5]">
                                 <img src="images/rank-top.svg" alt="img" class="img-fluid">
                                 <p class="text-white font-24 fw-normal mb-0 font-mono-light">#{{ rank | number:'1.0-0' }}</p>
                                 <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Rank</p>
                             </div>
                         </div>
                         <div class="backdrop-card d-flex">
-                            <div class="card-1 d-flex flex-column align-items-center text-center gap-2 mb-0">
+                            <div class="card-1 d-flex flex-column align-items-center text-center gap-2 mb-0"  [class.card-visible]="missioncardVisible[6]">
                                 <img src="images/conversion-top.svg" alt="img" class="img-fluid">
                                 <p class="text-white font-24 fw-normal mb-0 font-mono-light">{{ conversion | number:'1.0-0' }}%</p>
                                 <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Conversion</p>
@@ -59,53 +59,53 @@
             </div>
         </div>
     </div>
-    <div #utilitiesSection class="row mb-4">
+    <div #utilitiesSection data-aos="fade-up" data-aos-duration="1800" class="row mb-4">
         <div class="col-12 summary-section w-100 d-flex flex-row justify-content-lg-between align-items-stretch flex-wrap gap-3">
-            <div class="card menu-card d-flex flex-row align-items-center gap-2 mb-0" [class.card-visible]="cardVisible[0]">
+            <div  class="card menu-card d-flex flex-row align-items-center gap-2 mb-0" [class.card-visible]="cardVisible[0]">
                 <img src="images/total-leads.svg" alt="img" class="img-fluid">
                 <div class="d-flex flex-column ">
                     <p class="font-24 font-mono-light fw-normal clr--14181F mb-0">{{ totalLeads | number:'1.0-0' }}</p>
-                    <div class="d-flex flex-column card-details" [class.content-visible]="cardContentVisible[0]">
+                    <div class="d-flex flex-column card-details">
                         <p class="font-16 font-plus-jakarta fw-normal clr--676F7E mb-0">Total Leads</p>
                         <p class="font-14 font-plus-jakarta fw-normal clr--676F7Eb3 mb-0">+4 this week</p>
                     </div>
                 </div>
             </div>
-            <div class="card menu-card d-flex flex-row align-items-center gap-2 mb-0" [class.card-visible]="cardVisible[1]">
+            <div  class="card menu-card d-flex flex-row align-items-center gap-2 mb-0" [class.card-visible]="cardVisible[1]">
                 <img src="images/due-today.svg" alt="img" class="img-fluid">
                 <div class="d-flex flex-column ">
                     <p class="font-24 font-mono-light fw-normal clr--14181F mb-0">{{ totalDueToday | number:'1.0-0' }}</p>
-                    <div class="d-flex flex-column card-details" [class.content-visible]="cardContentVisible[1]">
+                    <div class="d-flex flex-column card-details">
                         <p class="font-16 font-plus-jakarta fw-normal clr--676F7E mb-0">Due Today</p>
                         <p class="font-14 font-plus-jakarta fw-normal clr--676F7Eb3 mb-0">2 urgent</p>
                     </div>
                 </div>
             </div>
-            <div class="card menu-card d-flex flex-row align-items-center gap-2 mb-0" [class.card-visible]="cardVisible[2]">
+            <div  class="card menu-card d-flex flex-row align-items-center gap-2 mb-0" [class.card-visible]="cardVisible[2]">
                 <img src="images/overdue.svg" alt="img" class="img-fluid">
                 <div class="d-flex flex-column ">
                     <p class="font-24 font-mono-light fw-normal clr--14181F mb-0">{{ totalOverdue | number:'1.0-0' }}</p>
-                    <div class="d-flex flex-column card-details" [class.content-visible]="cardContentVisible[2]">
+                    <div class="d-flex flex-column card-details">
                         <p class="font-16 font-plus-jakarta fw-normal clr--676F7E mb-0">Overdue</p>
                         <p class="font-14 font-plus-jakarta fw-normal clr--676F7Eb3 mb-0">Needs action</p>
                     </div>
                 </div>
             </div>
-            <div class="card menu-card d-flex flex-row align-items-center gap-2 mb-0" [class.card-visible]="cardVisible[3]">
+            <div  class="card menu-card d-flex flex-row align-items-center gap-2 mb-0" [class.card-visible]="cardVisible[3]">
                 <img src="images/converted.svg" alt="img" class="img-fluid">
                 <div class="d-flex flex-column ">
                     <p class="font-24 font-mono-light fw-normal clr--14181F mb-0">{{ totalConverted | number:'1.0-0' }}</p>
-                    <div class="d-flex flex-column card-details" [class.content-visible]="cardContentVisible[3]">
+                    <div class="d-flex flex-column card-details">
                         <p class="font-16 font-plus-jakarta fw-normal clr--676F7E mb-0">Converted</p>
                         <p class="font-14 font-plus-jakarta fw-normal clr--676F7Eb3 mb-0">+3 this week</p>
                     </div>
                 </div>
             </div>
-            <div class="card menu-card d-flex flex-row align-items-center gap-2 mb-0" [class.card-visible]="cardVisible[4]">
+            <div  class="card menu-card d-flex flex-row align-items-center gap-2 mb-0" [class.card-visible]="cardVisible[4]">
                 <img src="images/completed.svg" alt="img" class="img-fluid">
                 <div class="d-flex flex-column ">
                     <p class="font-24 font-mono-light fw-normal clr--14181F mb-0">{{ totalCompleted | number:'1.0-0' }}</p>
-                    <div class="d-flex flex-column card-details" [class.content-visible]="cardContentVisible[4]">
+                    <div class="d-flex flex-column card-details">
                         <p class="font-16 font-plus-jakarta fw-normal clr--676F7E mb-0">Completed</p>
                         <p class="font-14 font-plus-jakarta fw-normal clr--676F7Eb3 mb-0">56% of total</p>
                     </div>
@@ -273,7 +273,7 @@
             </mat-accordion>
         </div>
         <div class="col-12 col-xl-7 right-side-sections">
-            <div class="card d-flex flex-column">
+            <div class="card d-flex flex-column mb-0">
                 <div class="card-header d-flex flex-row align-items-center" #scrollContainer (mousedown)="startDragging($event)" (mousemove)="onDragging($event)" (mouseup)="stopDragging()" (mouseleave)="stopDragging()" (touchstart)="startTouchDrag($event)" (touchmove)="onTouchDrag($event)" (touchend)="stopDragging()">
                     <div class="status-chip-card green d-flex align-items-center flex-shrink-0">
                         <img src="images/green-right.svg" alt="" class="img-fluid">
@@ -448,9 +448,9 @@
         <h2 class="font-24 clr--1a1a1a fw-bold mb-0 font-mono-light">Achievements</h2>
         <p class="font-18 clr--gray fw-normal mb-0 font-plus-jakarta">3 / 4 unlocked</p>
     </div>
-    <div class="row d-flex align-items-stretch achievements-section">
+    <div  class="row d-flex align-items-stretch achievements-section">
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card d-flex flex-column align-items-center text-center gap-2">
+            <div data-aos="fade-up" data-aos-duration="1600" class="card d-flex flex-column align-items-center text-center gap-2">
                 <div class="title-img">
                     <img src="images/data-champion.png" alt="" class="img-fluid">
                 </div>
@@ -462,7 +462,7 @@
             </div>
         </div>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card d-flex flex-column align-items-center text-center gap-2">
+            <div data-aos="fade-up" data-aos-duration="1800" class="card d-flex flex-column align-items-center text-center gap-2">
                 <div class="title-img">
                     <img src="images/momentum-max.png" alt="" class="img-fluid">
                 </div>
@@ -474,7 +474,7 @@
             </div>
         </div>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card d-flex flex-column align-items-center text-center gap-2">
+            <div data-aos="fade-up" data-aos-duration="2000" class="card d-flex flex-column align-items-center text-center gap-2">
                 <div class="title-img">
                     <img src="images/calender-crusher.png" alt="" class="img-fluid">
                 </div>
@@ -486,7 +486,7 @@
             </div>
         </div>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card locked d-flex flex-column align-items-center text-center gap-2">
+            <div data-aos="fade-up" data-aos-duration="2200" class="card locked d-flex flex-column align-items-center text-center gap-2">
                 <div class="title-img">
                     <img src="images/enrollment-hero.png" alt="" class="img-fluid">
                 </div>

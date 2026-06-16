@@ -9,6 +9,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angular-datetime-picker';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-all-referrals',
@@ -22,6 +23,8 @@ export class AllReferrals{
 
   @ViewChild('missionControl') missionControl!: ElementRef;
   @ViewChild('utilitiesSection') utilitiesSection!: ElementRef;
+
+  missioncardVisible: boolean[] = [false, false, false, false, false, false, false];
 
   totalStreak = 0;
   targettotalStreak = 14;
@@ -39,7 +42,6 @@ export class AllReferrals{
   targetconversion = 34;
 
   cardVisible: boolean[] = [false, false, false, false, false];
-  cardContentVisible: boolean[] = [false, false, false, false, false];
 
   totalLeads = 0;
   targettotalLeads = 48;
@@ -135,172 +137,99 @@ export class AllReferrals{
     container.scrollLeft = this.scrollLeft - walk;
   }
 
-  animateTotalStreak(): void {
-      const target = this.targettotalStreak;
-      const duration = 1600;
-
-      const startTime = performance.now();
-
-      const animate = (currentTime: number) => {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-    
-        this.totalStreak = +(target * progress).toFixed(1);
-        this.cdr.detectChanges();
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        } else {
-          
-          this.totalStreak = target;
-
-        }
-      };
-    requestAnimationFrame(animate);
-  }
-
-  animateDayStreak(): void {
-      const target = this.targetdayStreak;
-      const duration = 1400;
-
-      const startTime = performance.now();
-
-      const animate = (currentTime: number) => {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-    
-        this.dayStreak = +(target * progress).toFixed(1);
-        this.cdr.detectChanges();
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        } else {
-          
-          this.dayStreak = target;
-
-        }
-      };
-    requestAnimationFrame(animate);
-  }
-
-  animateGoldSaves(): void {
-      const target = this.targetgoldSaves;
-      const duration = 1400;
-
-      const startTime = performance.now();
-
-      const animate = (currentTime: number) => {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-    
-        this.goldSaves = +(target * progress).toFixed(1);
-        this.cdr.detectChanges();
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        } else {
-          
-          this.goldSaves = target;
-
-        }
-      };
-    requestAnimationFrame(animate);
-  }
-
-  animateSilverSaves(): void {
-      const target = this.targetsilverSaves;
-      const duration = 1400;
-
-      const startTime = performance.now();
-
-      const animate = (currentTime: number) => {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-    
-        this.silverSaves = +(target * progress).toFixed(1);
-        this.cdr.detectChanges();
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        } else {
-          
-          this.silverSaves = target;
-
-        }
-      };
-    requestAnimationFrame(animate);
-  }
-
-  animateBronzeSaves(): void {
-      const target = this.targetbronzeSaves;
-      const duration = 1400;
-
-      const startTime = performance.now();
-
-      const animate = (currentTime: number) => {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-    
-        this.bronzeSaves = +(target * progress).toFixed(1);
-        this.cdr.detectChanges();
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        } else {
-          
-          this.bronzeSaves = target;
-
-        }
-      };
-    requestAnimationFrame(animate);
-  }
-
-  animateRank(): void {
-      const target = this.targetrank;
-      const duration = 1400;
-
-      const startTime = performance.now();
-
-      const animate = (currentTime: number) => {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-    
-        this.rank = +(target * progress).toFixed(1);
-        this.cdr.detectChanges();
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        } else {
-          
-          this.rank = target;
-
-        }
-      };
-    requestAnimationFrame(animate);
-  }
-
-  animateConversion(): void {
-      const target = this.targetconversion;
-      const duration = 1400;
-
-      const startTime = performance.now();
-
-      const animate = (currentTime: number) => {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-    
-        this.conversion = +(target * progress).toFixed(1);
-        this.cdr.detectChanges();
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        } else {
-          
-          this.conversion = target;
-
-        }
-      };
-    requestAnimationFrame(animate);
-  }
-
   private delay(ms: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
   private animateCounter(
+    target: number,
+    setter: (value: number) => void,
+    duration: number = 1400
+  ): Promise<void> {
+    return new Promise((resolve) => {
+
+      const startTime = performance.now();
+
+      const animate = (currentTime: number) => {
+
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        setter(Math.round(target * progress));
+
+        this.cdr.detectChanges();
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          setter(target);
+          resolve();
+        }
+      };
+
+      requestAnimationFrame(animate);
+    });
+  }
+
+  async startCardAnimations() {
+    this.missioncardVisible[0] = true;
+    await this.animateCounter(
+      this.targettotalStreak,
+      value => this.totalStreak = value
+    );
+    this.cdr.detectChanges();
+    await this.delay(10);
+
+    this.missioncardVisible[1] = true;
+    await this.animateCounter(
+      this.targetdayStreak,
+      value => this.dayStreak = value
+    );
+    this.cdr.detectChanges();
+    await this.delay(10);
+
+    this.missioncardVisible[2] = true;
+    await this.animateCounter(
+      this.targetgoldSaves,
+      value => this.goldSaves = value
+    );
+    this.cdr.detectChanges();
+    await this.delay(10);
+
+    this.missioncardVisible[3] = true;
+    await this.animateCounter(
+      this.targetsilverSaves,
+      value => this.silverSaves = value
+    );
+    this.cdr.detectChanges();
+    await this.delay(10);
+
+    this.missioncardVisible[4] = true;
+    await this.animateCounter(
+      this.targetbronzeSaves,
+      value => this.bronzeSaves = value
+    );
+    this.cdr.detectChanges();
+    await this.delay(10);
+
+    this.missioncardVisible[5] = true;
+    await this.animateCounter(
+      this.targetrank,
+      value => this.rank = value
+    );
+    this.cdr.detectChanges();
+    await this.delay(10);
+
+    this.missioncardVisible[6] = true;
+    await this.animateCounter(
+      this.targetconversion,
+      value => this.conversion = value
+    );
+    this.cdr.detectChanges();
+    await this.delay(10);
+  }
+
+  private animateCounter1(
     target: number,
     setter: (value: number) => void,
     duration: number = 1600
@@ -330,67 +259,61 @@ export class AllReferrals{
     });
   }
 
-  async startCardAnimations() {
+  async startCardAnimations1() {
     this.cardVisible[0] = true;
-    await this.animateCounter(
+    await this.animateCounter1(
       this.targettotalLeads,
       value => this.totalLeads = value
     );
-    this.cardContentVisible[0] = true;
     this.cdr.detectChanges();
-    await this.delay(150);
+    await this.delay(50);
 
     this.cardVisible[1] = true;
-    await this.animateCounter(
+    await this.animateCounter1(
       this.targetDueToday,
       value => this.totalDueToday = value
     );
-    this.cardContentVisible[1] = true;
     this.cdr.detectChanges();
-    await this.delay(150);
+    await this.delay(50);
 
     this.cardVisible[2] = true;
-    await this.animateCounter(
+    await this.animateCounter1(
       this.targetOverdue,
       value => this.totalOverdue = value
     );
-    this.cardContentVisible[2] = true;
     this.cdr.detectChanges();
-    await this.delay(150);
+    await this.delay(50);
 
     this.cardVisible[3] = true;
-    await this.animateCounter(
+    await this.animateCounter1(
       this.targetConverted,
       value => this.totalConverted = value
     );
-    this.cardContentVisible[3] = true;
     this.cdr.detectChanges();
-    await this.delay(150);
+    await this.delay(50);
 
     this.cardVisible[4] = true;
-    await this.animateCounter(
+    await this.animateCounter1(
       this.targetCompleted,
       value => this.totalCompleted = value
     );
-    this.cardContentVisible[4] = true;
     this.cdr.detectChanges();
-    await this.delay(150);
+    await this.delay(50);
   }
 
   ngAfterViewInit() {
+    AOS.init({
+      duration: 3000,
+      once: true
+    }); 
+    AOS.refresh();
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
 
           if (entry.isIntersecting) {
-            this.animateTotalStreak();
-            this.animateDayStreak();
-            this.animateGoldSaves()
-            this.animateSilverSaves();
-            this.animateBronzeSaves();
-            this.animateRank();
-            this.animateConversion();
+            this.startCardAnimations();
             this.cdr.detectChanges();
             observer.unobserve(entry.target);
           }
@@ -410,7 +333,7 @@ export class AllReferrals{
 
           if (entry.isIntersecting) {
 
-            this.startCardAnimations();
+            this.startCardAnimations1();
             this.cdr.detectChanges();
             observer1.unobserve(entry.target);
           }

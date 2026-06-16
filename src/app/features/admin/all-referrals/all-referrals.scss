@@ -46,24 +46,24 @@
                 height: auto;
                 width: 100%;
                 max-width: 19%;
-                opacity: 0;
-                transform: translateY(30px) scale(.95);
-                transition: all .5s ease;
+                // opacity: 0;
+                // transform: translateY(30px) scale(.95);
+                // transition: all .5s ease;
             }
             &.card-visible {
                 opacity: 1;
                 transform: translateY(0) scale(1);
             }
 
-            .card-details {
-                opacity: 0;
-                transform: translateY(10px);
-                transition: all .4s ease;
-                &.content-visible {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
+            // .card-details {
+            //     opacity: 0;
+            //     transform: translateY(10px);
+            //     transition: all .4s ease;
+            //     &.content-visible {
+            //         opacity: 1;
+            //         transform: translateY(0);
+            //     }
+            // }
         }
     }
     .search-box-field{
@@ -119,6 +119,7 @@
             background-color: #fff;
             box-shadow: none !important;
             border-radius: 8px !important;
+            margin-bottom: 16px;
         }
         .mat-expansion-panel-header{
             padding: 14px 14px;
@@ -139,6 +140,9 @@
         .mat-expansion-panel-body{
             padding: 24px;
             gap: 20px;
+        }
+        .mat-expansion-panel-spacing:last-child{
+            margin-bottom: 16px;
         }
     }
     .panel-body-section{
