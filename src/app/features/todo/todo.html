@@ -33,12 +33,12 @@
 
         <div class="todo-list">
           @for (todo of todos; track todo.name) {
-          <div class="todo-item">
+          <div class="todo-item d-flex align-items-center">
             <div class="todo-item__avatar font-16 d-flex align-items-center justify-content-center flex-shrink-0">
               {{ todo.initials }}
             </div>
 
-            <div class="d-flex align-items-center w-100">
+            <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center w-100">
               <div class="todo-item__content">
                 <h3 class="font-16 mb-1">{{ todo.name }}</h3>
                 <p class="font-plus-jakarta font-12 mb-0">{{ todo.phone }}</p>
