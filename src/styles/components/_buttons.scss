@@ -21,10 +21,24 @@ body{
         }  
         &.btn-light{
             background-color: #F8F9FA;
+            &.icon--button--36{
+                width: 36px;
+                height: 36px;
+                min-height: unset;
+                padding: 0;
+            }
         }  
         &.btn-secondary{
-            background-color: #5594F9;
-            border-color: #5594F9;  
+            background-color: #183887;
+            border-color: #183887; 
+            color: #fff;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
+        }
+        &.btn-orange{
+            background-color: #CA9551;
+            border-color: #CA9551;  
+            color: #fff;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
         }
         &.btn-lg{
              min-height: 40px;
@@ -95,6 +109,115 @@ body{
         } 
        
     }
+
+    // Angular Material Dropdown (Secondary)
+    .secondary--dd {     
+        .mat-mdc-text-field-wrapper {
+            height: 42px !important;
+            min-height: 42px !important;
+            padding: 0 12px !important;
+            background-color: #2454b8 !important;
+            border-radius: 8px !important;
+        }
+
+        .mat-mdc-form-field-flex {
+            height: 42px !important;
+            min-height: 42px !important;
+            align-items: center !important;
+        }
+
+        .mat-mdc-form-field-infix {
+            width: auto;
+            min-height: 42px !important;
+            height: 42px !important;
+            padding: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+        .mat-mdc-select {
+            height: 42px !important;
+            display: flex !important;
+            align-items: center !important;
+            font-size: 14px !important;
+            color: #ffffff !important;
+        }
+        .mat-mdc-select-trigger {
+            height: 42px !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+        .mat-mdc-select-value,
+        .mat-mdc-select-placeholder {
+            color: #ffffff !important;
+            font-size: 14px !important;
+            opacity: 1 !important;
+            font-family: "Plus Jakarta Sans", sans-serif;;
+        }
+        .mat-mdc-select-arrow-wrapper {
+            display: flex !important;
+            align-items: center !important;
+            transform: none !important;
+        }
+        .mat-mdc-select-arrow {
+            svg{
+                display: none;
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                top: -3px;
+                left: 0;
+                width: 7px;
+                height: 7px;
+                border-right: 2px solid #ffffff;
+                border-bottom: 2px solid #ffffff;
+                transform: rotate(44deg);
+            }
+        }
+        .mdc-notched-outline {
+            height: 42px !important;
+        }
+        .mdc-notched-outline__leading {
+            border-color: #ffffff !important;
+            border-width: 1px !important;
+            border-radius: 8px 0 0 8px !important;
+        }
+        .mdc-notched-outline__notch {
+            border-color: #ffffff !important;
+            border-width: 1px 0 1px 0 !important;
+            padding: 0 !important;
+            max-width: 0 !important;
+        }
+        .mdc-notched-outline__trailing {
+            border-color: #ffffff !important;
+            border-width: 1px !important;
+            border-radius: 0 8px 8px 0 !important;
+        }
+        .mdc-notched-outline--notched {
+        .mdc-notched-outline__notch {
+            border-top: 1px solid #ffffff !important;
+        }
+        }
+        .mat-mdc-form-field-subscript-wrapper {
+            display: none !important;
+        } 
+        .mat-mdc-select-panel{
+            padding: 0;
+            .mat-mdc-option{
+                min-height: 42px;
+                font-size: 14px !important;
+                .mdc-list-item__primary-text{
+                    font-family: "Plus Jakarta Sans", sans-serif;
+                }
+            }
+        }
+    }
+
+    .icon{
+        display: inline-block;
+        background-repeat: no-repeat;
+    }
+
 }
  @media (max-width: 767px) {
     body{
