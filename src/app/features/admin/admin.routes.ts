@@ -16,10 +16,10 @@ export const ADMINLAYOUT_ROUTES: Routes = [
     loadComponent: () => import('./manage-sessions/manage-sessions').then(c => c.ManageSessions),
     data: { title: 'Manage Sessions' }
   },
-  // {
-  //   path: 'all-referrals',
-  //   loadComponent: () => import('./all-referrals/all-referrals').then(c => c.AllReferrals),
-  //   data: { title: 'All Referrals' }
-  // },
+  {
+    path: 'all-referrals',
+    loadComponent: () => import('./all-referrals/all-referrals').then(c => c.AllReferrals),
+    data: { title: 'All Referrals' }
+  },
 ];
  
