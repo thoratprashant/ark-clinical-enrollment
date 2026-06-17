@@ -161,6 +161,14 @@
                 background-color: #fff;      
                 color: #1A3A7A;
             }
+            .user--name{
+                 display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 1.2;
+            }
             .contact{
                 background-color: #fff;
             }
