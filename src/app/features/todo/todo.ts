@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatIconModule } from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angular-datetime-picker';
 
 interface PriorityTodo {
   initials: string;
@@ -8,14 +11,57 @@ interface PriorityTodo {
   phone: string;
   due: string;
 }
+interface TodoSlide {
+  id: number;
+  type: 'gold' | 'silver' | 'bronze';
+  label: string; 
+}
 
 @Component({
   selector: 'app-todo',
-  imports: [CommonModule,MatSelectModule],
+  imports: [CommonModule,MatSelectModule,MatIconModule,MatDatepickerModule, OwlDateTimeModule, OwlNativeDateTimeModule],
   templateUrl: './todo.html',
   styleUrl: './todo.scss',
 })
 export class Todo {
+
+  activeIndex = 0;
+
+  slides: TodoSlide[] = [
+    {
+      id: 1,
+      type: 'gold',
+      label: 'Emily Gold', 
+    },
+    {
+      id: 2,
+      type: 'silver',
+      label: 'Particia Silver', 
+    },
+    {
+      id: 3,
+      type: 'bronze',
+      label: 'Carter Bronze', 
+    }, 
+  ];
+
+  get nextIndex(): number {
+    return (this.activeIndex + 1) % this.slides.length;
+  }
+
+  prevSlide(): void {
+    this.activeIndex =
+      (this.activeIndex - 1 + this.slides.length) % this.slides.length;
+  }
+
+  nextSlide(): void {
+    this.activeIndex =
+      (this.activeIndex + 1) % this.slides.length;
+  }
+
+
+
+
   todos: PriorityTodo[] = [
     {
       initials: 'SH',

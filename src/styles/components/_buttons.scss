@@ -21,6 +21,7 @@ body{
         }  
         &.btn-light{
             background-color: #F8F9FA;
+            border-color: #F8F9FA;
             &.icon--button--36{
                 width: 36px;
                 height: 36px;
@@ -111,21 +112,19 @@ body{
     }
 
     // Angular Material Dropdown (Secondary)
-    .secondary--dd {     
+    .cust--dd {     
         .mat-mdc-text-field-wrapper {
             height: 42px !important;
             min-height: 42px !important;
             padding: 0 12px !important;
-            background-color: #2454b8 !important;
+            background-color: #fff !important;
             border-radius: 8px !important;
         }
-
         .mat-mdc-form-field-flex {
             height: 42px !important;
             min-height: 42px !important;
             align-items: center !important;
         }
-
         .mat-mdc-form-field-infix {
             width: auto;
             min-height: 42px !important;
@@ -139,7 +138,7 @@ body{
             display: flex !important;
             align-items: center !important;
             font-size: 14px !important;
-            color: #ffffff !important;
+            color: #0F1729 !important;
         }
         .mat-mdc-select-trigger {
             height: 42px !important;
@@ -148,7 +147,7 @@ body{
         }
         .mat-mdc-select-value,
         .mat-mdc-select-placeholder {
-            color: #ffffff !important;
+            color: #0F1729 !important;
             font-size: 14px !important;
             opacity: 1 !important;
             font-family: "Plus Jakarta Sans", sans-serif;;
@@ -169,8 +168,8 @@ body{
                 left: 0;
                 width: 7px;
                 height: 7px;
-                border-right: 2px solid #ffffff;
-                border-bottom: 2px solid #ffffff;
+                border-right: 2px solid #bbbfc7;
+                border-bottom: 2px solid #bbbfc7;
                 transform: rotate(44deg);
             }
         }
@@ -178,24 +177,24 @@ body{
             height: 42px !important;
         }
         .mdc-notched-outline__leading {
-            border-color: #ffffff !important;
+            border-color: #DCDFE4 !important;
             border-width: 1px !important;
             border-radius: 8px 0 0 8px !important;
         }
         .mdc-notched-outline__notch {
-            border-color: #ffffff !important;
+            border-color: #DCDFE4 !important;
             border-width: 1px 0 1px 0 !important;
             padding: 0 !important;
             max-width: 0 !important;
         }
         .mdc-notched-outline__trailing {
-            border-color: #ffffff !important;
+            border-color: #DCDFE4 !important;
             border-width: 1px !important;
             border-radius: 0 8px 8px 0 !important;
         }
         .mdc-notched-outline--notched {
         .mdc-notched-outline__notch {
-            border-top: 1px solid #ffffff !important;
+            border-top: 1px solid #0F1729 !important;
         }
         }
         .mat-mdc-form-field-subscript-wrapper {
@@ -211,7 +210,43 @@ body{
                 }
             }
         }
+
+        &.secondary--dd {     
+            .mat-mdc-text-field-wrapper { 
+                background-color: #2454b8 !important; 
+            }  
+            .mat-mdc-select { 
+                color: #ffffff !important;
+            } 
+            .mat-mdc-select-value,
+            .mat-mdc-select-placeholder {
+                color: #ffffff !important; 
+            } 
+            .mat-mdc-select-arrow { 
+                &::before{ 
+                    border-right: 2px solid #ffffff;
+                    border-bottom: 2px solid #ffffff; 
+                }
+            } 
+            .mdc-notched-outline__leading {
+                border-color: #ffffff !important; 
+            }
+            .mdc-notched-outline__notch {
+                border-color: #ffffff !important; 
+            }
+            .mdc-notched-outline__trailing {
+                border-color: #ffffff !important; 
+            }
+            .mdc-notched-outline--notched {
+                .mdc-notched-outline__notch {
+                    border-top: 1px solid #ffffff !important;
+                }
+            } 
+            
+        }
     }
+
+   
 
     .icon{
         display: inline-block;

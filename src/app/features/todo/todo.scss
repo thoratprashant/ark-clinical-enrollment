@@ -9,12 +9,25 @@
          width: 14px;
         height: 13px;
     }
+    .icon--call{
+        background-image: url('../../../../public/images/call-white.svg');
+        width: 17px;
+        height: 17px;
+    }
     .secondary--dd {
         width: 122px;
     }
     .eye--btn{
         background-color: #FFF3E3;
     }
+    .call-btn{
+        border: 4px solid transparent;
+        border-radius: 6px;
+        background:
+            linear-gradient(#173f96, #173f96) padding-box,
+            linear-gradient(90deg, #ff9200 0%, #ffd397 50%, #ff9200 100%) border-box;
+    }
+
     .priority-card {
         width: 100%; 
         border-radius: 8px;
@@ -67,6 +80,205 @@
 
 
 
+    .todo-carousel {
+        position: relative;
+        width: 100%;
+        max-width: 1280px;
+        height: 430px;
+        margin-top: 35px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+    .carousel-stage {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .todo-slide {
+        border-radius: 12px;
+        border: 1px solid #1FAD91;
+        background: #ebf3f3;
+        box-shadow: 6px 6px 16px 0 rgba(0, 0, 0, 0.10);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 58%;
+        height: 100%;
+        padding: 23px;  
+        box-sizing: border-box;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(120%) scale(0.82);
+        transition:
+            transform 420ms ease,
+            opacity 420ms ease,
+            width 420ms ease,
+            box-shadow 420ms ease;
+        
+            .green--strip{
+                border-radius: 6px;
+                background: rgba(31, 173, 145, 0.20);
+                    padding: 4px 10px;
+                color: #1FAD91;
+            }
+            .user--ring{
+                border: 2px dashed #1FAD91;
+                box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+                width: 52px;
+                height: 52px;     
+                background-color: #fff;      
+                color: #1A3A7A;
+            }
+            .contact{
+                background-color: #fff;
+            }
+            .note--sec{
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 1.4;
+            }
+            .next--action{
+                border-top: 1px solid rgba(31, 173, 145, 0.30);
+                border-bottom: 1px solid rgba(31, 173, 145, 0.30);
+                margin: 16px 0;
+                padding: 16px 0;
+                .cust--dd{
+                    min-width: 208px;
+                }
+            }
+            footer{
+                margin-top: auto;
+                .medal--box{
+                    width: 44px;
+                    height: 44px;
+                    border: 1px solid #7F898B;
+                    border-radius: 6px;
+                    background-color: #fff;
+                }
+                .h--box{
+                    border-radius: 2px;
+                    background: #FFF;
+                    height: 24px;
+                    width: 24px;
+                }
+            }
+            
+
+
+            .call-btn{font-size: 14px;}
+            .font-24{font-size: 18px;}
+            .font-16{font-size: 12px;}
+
+
+            &.todo-slide--silver{
+                .call-btn{
+                      background:
+                        linear-gradient(#173f96, #173f96) padding-box,
+                        linear-gradient(90deg, #7f898b 0%, #bababa 50%, #7f898b 100%) border-box;
+                } 
+            }
+
+
+            &.todo-slide--bronze{
+                .call-btn{ 
+                    background:
+                    linear-gradient(#173f96, #173f96) padding-box,
+                    linear-gradient(180deg, #bf8c40 0%, #ffeacb 50%, #bf8c40 100%) border-box;
+                }
+                
+            }
+            &.todo-slide--active{
+                .call-btn{font-size: 16px;}
+                .font-24{font-size: 24px;}
+                .font-16{font-size: 16px;}
+                .next--action{display: block !important;}
+            }
+    }
+
+    .todo-slide--active {
+        z-index: 2;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(0) scale(1);
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.24);
+    }
+    .todo-slide--queue {
+        z-index: 1;
+        width: 41%;
+        left: 11%;
+        height: 90%;
+        top: 28px;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(115%) scale(0.96); 
+    }
+    .todo-slide--hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+    .todo-slide--gold {
+        // background: linear-gradient(135deg, #f7c948, #d99a00);
+    }
+    .todo-slide--silver {
+        // background: linear-gradient(135deg, #dce3ea, #9ca8b3);
+    }
+    .todo-slide--bronze {
+        // background: linear-gradient(135deg, #d79a5b, #9b5e2e);
+    }  
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        z-index: 5;
+        width: 38px;
+        height: 48px;
+        border: 0;
+       display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        background: #d59a49;
+        color: #fff;  
+        cursor: pointer;
+        filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+        transform: translateY(-50%);
+        transition:
+            opacity 180ms ease,
+            transform 180ms ease,
+            background-color 180ms ease;
+    }
+    .carousel-btn:hover:not(:disabled) {
+        background: #bd8133;
+        transform: translateY(-50%) scale(1.04);
+    }
+    .carousel-btn:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+    }
+    .carousel-btn--prev {
+        left: 12px;
+    }
+    .carousel-btn--next {
+        right: 0;
+    }
+    @media (max-width: 768px) {
+        .todo-carousel {
+            height: 360px;
+        }
+        .todo-slide,
+        .todo-slide--queue {
+            width: calc(100% - 64px);
+            height: 100%;
+            top: 0;
+        }
+        .todo-slide--queue {
+            transform: translateX(92%) scale(0.9);
+        }
+    }
 
 
 
