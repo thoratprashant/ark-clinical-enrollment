@@ -28,6 +28,37 @@
             linear-gradient(90deg, #ff9200 0%, #ffd397 50%, #ff9200 100%) border-box;
     }
 
+    .header--banner{ 
+        .card{
+            border-radius: 16px;
+            background: #183887;
+            position: relative;
+            overflow: hidden;
+            padding: 40px 32px;
+            &::after{
+                content: '';
+                background-image: url('../../../../public/images/overlay-1.png');
+                position: absolute;
+                left: 30%;
+                top: 0;
+                width: 256px;
+                height: 78px;
+            }
+            .section-sub-cards{
+                gap: 10px;
+                .backdrop-card{
+                    min-width: 108px;
+                    height: 100%;
+                    padding: 12px 14px;
+                    border-radius: 12px;
+                    background: #ffffff1a;
+                    backdrop-filter: blur(2px); 
+                    gap: 2px
+                }
+            }
+        }
+    }
+
     .priority-card {
         width: 100%; 
         border-radius: 8px;
@@ -76,8 +107,7 @@
             background: #e7b7ff;
             color: #8c00ff; 
         }
-    }
-
+    } 
 
 
     .todo-carousel {
@@ -265,6 +295,8 @@
     .carousel-btn--next {
         right: 0;
     }
+ 
+
     @media (max-width: 768px) {
         .todo-carousel {
             height: 360px;
@@ -281,6 +313,31 @@
     }
 
 
+    .achievements-section{
+        .card{
+            padding: 21px;
+            gap: 15px;
+            border-radius: 8px;
+            border: 2px solid #E5E2DC;
+            background: #FFF;
+            box-shadow: 0 1.878px 3.756px 0 #0000000d;
+            height: stretch;
+            .title-img{
+                width: 46px;
+                height: 61px;
+            }
+            .bottom-img{
+                width: 30px;
+                height: 30px;
+            }
+
+            &.locked{
+                border: 2px dashed #1a1a1a1a;
+                background: linear-gradient(0deg, #FFF 0%, #FFF 100%), rgba(245, 240, 232, 0.50);
+                background-blend-mode: saturation, normal;
+            }
+        }
+    }
 
  
 

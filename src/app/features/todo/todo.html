@@ -1,5 +1,54 @@
 <div class="container-fluid todo--wrapper">
   <div class="row">
+    <div class="col-12 header--banner">
+      <div class="card p-3 p-sm-4 d-flex flex-column mb-4 mb-sm-5">
+        <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between gap-3">
+          <div class="d-flex flex-column gap-2">
+            <div class="d-flex align-items-center gap-2">
+              <img src="images/mission-control-top.svg" alt="img" class="img-fluid">
+              <p class="font-14 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Mission Control</p>
+            </div>
+            <h2 class="text-white fw-bold mb-0 font-32">You're on a <span class="clr--F9712A">14-day streak!</span></h2>
+            <p class="font-16 fw-normal clr--ffffffb3 mb-0">3 more Gold saves this week to unlock the <span
+                class="clr--F9712A">Legend Badge</span>. Keep the momentum!</p>
+          </div>
+          <div class="d-flex flex-row align-items-stretch section-sub-cards">
+            <div class="backdrop-card  d-flex flex-column align-items-center text-center mb-0"> 
+                <img src="images/day-streak-top.svg" alt="img" class="img-fluid">
+                <p class="text-white font-24 fw-normal mb-0 font-mono-light">15</p>
+                <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Day Streak</p> 
+            </div>
+            <div class="backdrop-card  d-flex flex-column align-items-center text-center mb-0"> 
+                <img src="images/gold-saves-top.svg" alt="img" class="img-fluid">
+                <p class="text-white font-24 fw-normal mb-0 font-mono-light">19</p>
+                <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Gold Saves</p> 
+            </div>
+            <div class="backdrop-card  d-flex flex-column align-items-center text-center mb-0"> 
+                <img src="images/silver-saves-top.svg" alt="img" class="img-fluid">
+                <p class="text-white font-24 fw-normal mb-0 font-mono-light">12</p>
+                <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Silver Saves</p> 
+            </div>
+            <div class="backdrop-card  d-flex flex-column align-items-center text-center mb-0"> 
+                <img src="images/bronze-saves-top.svg" alt="img" class="img-fluid">
+                <p class="text-white font-24 fw-normal mb-0 font-mono-light">10</p>
+                <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Bronze Saves</p> 
+            </div>
+            <div class="backdrop-card  d-flex flex-column align-items-center text-center mb-0"> 
+                <img src="images/rank-top.svg" alt="img" class="img-fluid">
+                <p class="text-white font-24 fw-normal mb-0 font-mono-light">#3</p>
+                <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Rank</p> 
+            </div>
+            <div class="backdrop-card  d-flex flex-column align-items-center text-center mb-0"> 
+                <img src="images/conversion-top.svg" alt="img" class="img-fluid">
+                <p class="text-white font-24 fw-normal mb-0 font-mono-light">24%</p>
+                <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Conversion</p> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-12 col-lg-8">
       <header class="d-flex align-items-start justify-content-between w-100">
         <div class="d-flex align-items-start">
@@ -51,14 +100,14 @@
             </header>
             <div class="d-flex align-items-start">
               <div
-                class="user--ring d-flex align-items-center justify-content-center flex-shrink-0 rounded-5 font-inter font-bold me-sm-3 me-2">
-                EC</div>
+                class="user--ring d-flex align-items-center justify-content-center flex-shrink-0 rounded-5 font-inter fw-bold me-sm-3 me-2">
+                {{slide.initials}}</div>
               <div class="d-flex align-items-start justify-content-between w-100">
-                <div class="d-flex flex-column w-100">
-                  <h3 class="font-24 clr--14181F mb-1">{{slide.label}}</h3>
+                <div class="d-flex flex-column w-100 min-width-0">
+                  <h3 class="font-24 clr--14181F mb-1 text--ellipses">{{slide.userName}}</h3>
                   <p class="gap-2 mb-0 font-16 clr--676F7E font-plus-jakarta d-flex align-items-center flex-wrap">
-                    HORIZON-2 Trial
-                    <span class="rounded-2 contact py-1 px-2 clr--1FAD91 font-plus-jakarta">+1 345 678 9012</span>
+                   {{slide.horizon}}
+                    <span class="rounded-2 contact py-1 px-2 clr--1FAD91 font-plus-jakarta">{{slide.contactno}}</span>
                   </p>
                 </div>
                 <button type="button" class="btn btn-primary call-btn flex-shrink-0 rounded-3 call-btn">
@@ -67,22 +116,18 @@
               </div>
             </div>
             <div class="note--sec w-100 clr--6B7280 font-12 mt-3 font-plus-jakarta">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing eli Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit , Lorem ipsum dolor sit amet, consectetur adipiscing dolor sit amet,
-              consectetur adipiscing it Lorem ipsum dolor sit amet, consectetur adipiscing eli Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit
+              {{slide.noteData}}
             </div>
 
             <div class="d-flex align-items-center justify-content-between w-100 next--action d-none">
-                <mat-form-field appearance="outline" class="cust--dd">
-                    <mat-select placeholder="New">
-                    <mat-option value="01">Pending</mat-option>
-                    <mat-option value="02">Approved</mat-option>
-                    <mat-option value="30">Rejected</mat-option>
-                    </mat-select>
-                </mat-form-field>
-                <!-- <mat-form-field appearance="outline" class="date-time-select">
+              <mat-form-field appearance="outline" class="cust--dd">
+                <mat-select placeholder="New">
+                  <mat-option value="01">Pending</mat-option>
+                  <mat-option value="02">Approved</mat-option>
+                  <mat-option value="30">Rejected</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <!-- <mat-form-field appearance="outline" class="date-time-select">
                     <mat-icon matPrefix class="field-prefix-icon">calendar_today</mat-icon>
                     <input
                     matInput
@@ -96,21 +141,23 @@
                 </mat-form-field> -->
             </div>
 
-             <footer class="d-flex align-items-center justify-content-between w-100 ">
-                <div class="d-flex flex-column">
-                    <div class="d-flex align-items-center ">
-                        <img src="images/zap-sm.png" alt="zap" class="me-2" >
-                        <div class="d-flex align-items-center clr--orange-1 font-plus-jakarta gap-2">
-                            <div class="h--box font-16 font-plus-jakarta d-flex align-items-center justify-content-center">01</div> <span>:</span>
-                            <div class="h--box font-16 font-plus-jakarta d-flex align-items-center justify-content-center">45</div> <span class="font-16"> left for GOLD</span>
-                        </div>
-                    </div>
-                    <p class="mb-0 clr--6B7280 font-12 font-plus-jakarta mt-1">0-2 hrs · Pulsing</p>
+            <footer class="d-flex align-items-center justify-content-between w-100 ">
+              <div class="d-flex flex-column">
+                <div class="d-flex align-items-center ">
+                  <img src="images/zap-sm.png" alt="zap" class="me-2">
+                  <div class="d-flex align-items-center clr--orange-1 font-plus-jakarta gap-2">
+                    <div class="h--box font-16 font-plus-jakarta d-flex align-items-center justify-content-center">{{slide.hours}}
+                    </div> <span>:</span>
+                    <div class="h--box font-16 font-plus-jakarta d-flex align-items-center justify-content-center">{{slide.minite}}
+                    </div> <span class="font-16"> {{slide.leftdata}}</span>
+                  </div>
                 </div>
-                <div class="medal--box d-flex align-items-center justify-content-center">
-                    <img src="images/silver-medal.png" alt="icon gold medal" >
-                </div>
-             </footer>
+                <p class="mb-0 clr--6B7280 font-12 font-plus-jakarta mt-1"> {{slide.pulsing}}</p>
+              </div>
+              <div class="medal--box d-flex align-items-center justify-content-center">
+                <img src="images/{{slide.medalimage}}" alt="icon gold medal">
+              </div>
+            </footer>
 
           </article>
           }
@@ -159,6 +206,62 @@
           }
         </div>
       </section>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 d-flex align-items-center justify-content-between gap-2 mb-4 mt-3 mt-sm-5">
+      <h2 class="font-24 clr--1a1a1a fw-bold mb-0 font-mono-light">Achievements</h2>
+      <p class="font-18 clr--gray fw-normal mb-0 font-plus-jakarta">3 / 4 unlocked</p>
+    </div>
+  </div>
+  <div class="row d-flex align-items-stretch achievements-section">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card d-flex flex-column align-items-center text-center gap-2">
+        <div class="title-img">
+          <img src="images/data-champion.png" alt="" class="img-fluid">
+        </div>
+        <h2 class="font-24 fw-bold clr--1a1a1a mb-0 font-mono-light">Data Champion</h2>
+        <p class="font-16 fw-normal clr--gray mb-0 font-mono-light">Logged 50+ Outcomes</p>
+        <div class="bottom-img">
+          <img src="images/yellow-correct.svg" alt="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card d-flex flex-column align-items-center text-center gap-2">
+        <div class="title-img">
+          <img src="images/momentum-max.png" alt="" class="img-fluid">
+        </div>
+        <h2 class="font-24 fw-bold clr--1a1a1a mb-0 font-mono-light">Momentum Maximizer</h2>
+        <p class="font-16 fw-normal clr--gray mb-0 font-mono-light">Made 5+ initial contacts within 8 hours</p>
+        <div class="bottom-img">
+          <img src="images/yellow-correct.svg" alt="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card d-flex flex-column align-items-center text-center gap-2">
+        <div class="title-img">
+          <img src="images/calender-crusher.png" alt="" class="img-fluid">
+        </div>
+        <h2 class="font-24 fw-bold clr--1a1a1a mb-0 font-mono-light">Calendar Crusher</h2>
+        <p class="font-16 fw-normal clr--gray mb-0 font-mono-light">Scheduled 5+ referrals for their screening</p>
+        <div class="bottom-img">
+          <img src="images/yellow-correct.svg" alt="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card locked d-flex flex-column align-items-center text-center gap-2">
+        <div class="title-img">
+          <img src="images/enrollment-hero.png" alt="" class="img-fluid">
+        </div>
+        <h2 class="font-24 fw-bold clr--1a1a1a mb-0 font-mono-light">Enrollment Hero</h2>
+        <p class="font-16 fw-normal clr--gray mb-0 font-mono-light">3+ referrals signed ICF</p>
+        <div class="bottom-img">
+          <img src="images/yellow-correct.svg" alt="" class="img-fluid">
+        </div>
+      </div>
     </div>
   </div>
 </div>

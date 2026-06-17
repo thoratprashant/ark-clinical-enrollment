@@ -9,12 +9,21 @@ interface PriorityTodo {
   initials: string;
   name: string;
   phone: string;
-  due: string;
+  due: string; 
 }
 interface TodoSlide {
   id: number;
   type: 'gold' | 'silver' | 'bronze';
-  label: string; 
+  userName: string; 
+  initials:string;
+  medalimage: string;
+  horizon: string;
+  contactno:string;
+  noteData:string;
+  hours:string;
+  minite:string;
+  leftdata:string;
+  pulsing:string;
 }
 
 @Component({
@@ -31,17 +40,44 @@ export class Todo {
     {
       id: 1,
       type: 'gold',
-      label: 'Emily Gold', 
+      userName: 'Emily Gold',
+      initials: 'EG',
+      horizon:'HORIZON-1 Trial',
+      contactno:'+1 345 678 9012',
+      noteData:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing eli Lorem ipsum dolor sit amet, consectetur adipiscing elit , Lorem ipsum dolor sit amet, consectetur adipiscing dolor sit amet, consectetur adipiscing it Lorem ipsum dolor sit amet, consectetur adipiscing eli Lorem ipsum dolor sit amet, consectetur adipiscing elit', 
+      medalimage: 'gold-medal.png',
+      hours:'1',
+      minite:'32',
+      leftdata:'left for GOLD',
+      pulsing:'0-2 hrs · Pulsing'
     },
     {
       id: 2,
       type: 'silver',
-      label: 'Particia Silver', 
+      userName: 'Particia Silver', 
+      initials:'PS',
+      horizon:'HORIZON-2 Trial',
+      contactno:'+1 895 547 2154',
+      noteData:'Lorem ipsum dolor  it Lorem ipsum dolor sit amet, consectetur adipiscing eli Lorem ipsum dolor sit amet, consectetur adipiscing elit , Lorem ipsum dolor sit amet, consectetur adipiscing dolor sit amet, consectetur adipiscing it Lorem ipsum dolor sit amet, consectetur adipiscing eli Lorem ipsum dolor sit amet, consectetur adipiscing elit', 
+      medalimage: 'silver-medal.png',
+      hours:'2',
+      minite:'24',
+      leftdata:'left for SILVER',
+      pulsing:'0-3 hrs · Pulsing'
     },
     {
       id: 3,
       type: 'bronze',
-      label: 'Carter Bronze', 
+      userName: 'Carter Bronze',
+      initials: 'CB',
+      horizon:'HORIZON-3 Trial',
+      contactno:'+1 741 852 9632',
+      noteData:'Lorem ipsu i Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsu i Lorem ipsum dolor sit amet, consectetur adipiscing elit',  
+      medalimage: 'bronze-medal.png',
+      hours:'3',
+      minite:'44',
+      leftdata:'left for BRONZE',
+      pulsing:'0-4 hrs · Pulsing'
     }, 
   ];
 

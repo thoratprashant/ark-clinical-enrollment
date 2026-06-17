@@ -21,10 +21,10 @@ export const ADMINLAYOUT_ROUTES: Routes = [
     loadComponent: () => import('./all-referrals/all-referrals').then(c => c.AllReferrals),
     data: { title: 'All Referrals' }
   },
-  {
-    path: 'reports',
-    loadComponent: () => import('./reports/reports').then(c => c.Reports),
-    data: { title: 'Reports' }
-  },
+  // {
+  //   path: 'reports',
+  //   loadComponent: () => import('./reports/reports').then(c => c.Reports),
+  //   data: { title: 'Reports' }
+  // },
 ];
  
