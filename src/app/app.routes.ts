@@ -20,12 +20,7 @@ export const routes: Routes = [
     path: 'dashboard',
     loadComponent: () => import('./layouts/admin-layout/admin-layout').then(c => c.AdminLayout),
     loadChildren: () =>  import('./features/dashboard/dashboard.routes').then(r => r.DASHBOARDLAYOUT_ROUTES),
-  }, 
-  {
-    path: 'to-do',
-    loadComponent: () => import('./layouts/admin-layout/admin-layout').then(c => c.AdminLayout),
-    loadChildren: () =>  import('./features/todo/todo.routes').then(r => r.TODO_ROUTES),
-  }, 
+  },  
   {
     path: '**',
     loadComponent: () => import('./layouts/admin-layout/admin-layout').then(c => c.AdminLayout),
