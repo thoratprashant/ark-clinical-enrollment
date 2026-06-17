@@ -1,7 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angular-datetime-picker';
 import AOS from 'aos';
@@ -29,7 +32,7 @@ interface TodoSlide {
 
 @Component({
   selector: 'app-todo',
-  imports: [CommonModule,MatSelectModule,MatIconModule,MatDatepickerModule, OwlDateTimeModule, OwlNativeDateTimeModule],
+  imports: [CommonModule,MatInputModule,FormsModule,MatFormFieldModule,MatSelectModule,MatIconModule,MatDatepickerModule, OwlDateTimeModule, OwlNativeDateTimeModule],
   templateUrl: './todo.html',
   styleUrl: './todo.scss',
 })
