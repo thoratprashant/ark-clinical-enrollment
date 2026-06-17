@@ -62,7 +62,9 @@
     <div class="logo--sm">
     <!-- <img src="images/logo.webp" alt="img" class=""> -->
   </div>
-  <nav> 
+  <nav>
+    <a routerLink="/admin/all-referrals" (click)="closeMenu()">All Referrals</a>
+    <a routerLink="/admin/reports" (click)="closeMenu()">Reports</a>
     <a routerLink="/admin/users" (click)="closeMenu()"  routerLink="/admin/profile">Profile</a> 
     <a routerLink="/admin/users" (click)="closeMenu()" (click)="logout()">Logout</a>
   </nav>
