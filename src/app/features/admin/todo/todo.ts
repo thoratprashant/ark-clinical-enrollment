@@ -4,6 +4,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatIconModule } from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angular-datetime-picker';
+import AOS from 'aos';
 
 interface PriorityTodo {
   initials: string;
@@ -124,4 +125,12 @@ export class Todo {
       due: 'Due in 1 hr'
     }
   ];
+
+  ngAfterViewInit(): void {
+    AOS.init({
+      duration: 1000,
+      once: true
+    }); 
+    AOS.refresh();
+  }
 }
