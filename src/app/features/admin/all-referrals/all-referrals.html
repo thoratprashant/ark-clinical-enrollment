@@ -11,7 +11,7 @@
                         <h2 class="text-white fw-bold mb-0" [class.card-visible]="missioncardVisible[0]">You're on a <span class="clr--F9712A">{{ totalStreak | number:'1.0-0' }}-day streak!</span></h2>
                         <p class="font-16 fw-normal clr--ffffffb3 mb-0">3 more Gold saves this week to unlock the <span class="clr--F9712A">Legend Badge</span>. Keep the momentum!</p>
                     </div>
-                    <div data-aos="fade-up" data-aos-duration="1000" class="d-flex flex-row align-items-stretch section-sub-cards">
+                    <div data-aos="fade-up" data-aos-duration="1500" class="d-flex flex-row align-items-stretch section-sub-cards">
                         <div class="backdrop-card d-flex">
                             <div class="card-1 d-flex flex-column align-items-center text-center gap-2 mb-0" [class.card-visible]="missioncardVisible[1]">
                                 <img src="images/day-streak-top.svg" alt="img" class="img-fluid">
@@ -43,14 +43,14 @@
                         <div class="backdrop-card d-flex">
                             <div class="card-1 d-flex flex-column align-items-center text-center gap-2 mb-0" [class.card-visible]="missioncardVisible[5]">
                                 <img src="images/rank-top.svg" alt="img" class="img-fluid">
-                                <p class="text-white font-24 fw-normal mb-0 font-mono-light">#{{ rank | number:'1.0-0' }}</p>
+                                <p class="text-white font-24 fw-normal mb-0 font-mono-light">#{{ rank | number:'1.1-1' }}</p>
                                 <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Rank</p>
                             </div>
                         </div>
                         <div class="backdrop-card d-flex">
                             <div class="card-1 d-flex flex-column align-items-center text-center gap-2 mb-0"  [class.card-visible]="missioncardVisible[6]">
                                 <img src="images/conversion-top.svg" alt="img" class="img-fluid">
-                                <p class="text-white font-24 fw-normal mb-0 font-mono-light">{{ conversion | number:'1.0-0' }}%</p>
+                                <p class="text-white font-24 fw-normal mb-0 font-mono-light">{{ conversion | number:'1.1-1' }}%</p>
                                 <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Conversion</p>
                             </div>
                         </div>
@@ -317,7 +317,7 @@
                             </button>
 
                             <div class="d-flex attempt-select">
-                                <mat-form-field appearance="outline" class="attempt-select">
+                                <mat-form-field appearance="outline" class="primary--dd attempt-select">
                                     <mat-select placeholder="Select...">
                                         <mat-option value="1">1st Attempt</mat-option>
                                         <mat-option value="2">2nd Attempt</mat-option>
@@ -325,7 +325,7 @@
                                 </mat-form-field>
                             </div>
                             <div class="d-flex date-time-select">
-                                <mat-form-field appearance="outline" class="date-time-select">
+                                <mat-form-field appearance="outline" class="primary--dd date-time-select">
                                     <mat-icon matPrefix class="field-prefix-icon">calendar_today</mat-icon>
                                     <input
                                     matInput
