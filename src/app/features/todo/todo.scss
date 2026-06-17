@@ -196,15 +196,7 @@
                     height: 24px;
                     width: 24px;
                 }
-            }
-            
-
-
-            .call-btn{font-size: 14px;}
-            .font-24{font-size: 18px;}
-            .font-16{font-size: 12px;}
-
-
+            } 
             &.todo-slide--silver{
                 .call-btn{
                       background:
@@ -222,12 +214,10 @@
                 }
                 
             }
-            &.todo-slide--active{
-                .call-btn{font-size: 16px;}
-                .font-24{font-size: 24px;}
-                .font-16{font-size: 16px;}
+            &.todo-slide--active{ 
                 .next--action{display: block !important;}
             }
+            
     }
 
     .todo-slide--active {
@@ -246,6 +236,9 @@
         opacity: 1;
         pointer-events: auto;
         transform: translateX(115%) scale(0.96); 
+        .call-btn{font-size: 14px;}
+        .font-24{font-size: 18px;}
+        .font-16{font-size: 12px;}
     }
     .todo-slide--hidden {
         opacity: 0;

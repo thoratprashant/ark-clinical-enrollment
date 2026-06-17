@@ -55,3 +55,19 @@ body {
     .font-24 {font-size: 18px !important;}
   }
  }
+@media only screen and (min-width: 600px) and (max-width: 979px){}
+@media only screen and (min-width: 980px) and (max-width: 1279px){}
+@media only screen and (min-width: 1280px) and (max-width: 1440px){}
+@media only screen and (min-width: 1279px) and (max-width: 1550px){
+  body{ 
+  .font-14 { font-size: 0.8125rem; } // 13px
+  .font-15 { font-size: 0.875rem; }  // 14px
+  .font-16 { font-size: 0.9375rem; } // 15px
+  .font-18 { font-size: 1.0625rem; } // 17px
+  .font-20 { font-size: 1.125rem; }  // 18px
+  .font-22 { font-size: 1.25rem; }   // 20px
+  .font-24 { font-size: 1.375rem; }  // 22px
+  .font-26 { font-size: 1.5rem; }    // 24px
+  .font-32 { font-size: 1.875rem; }  // 30px
+  }
+}
