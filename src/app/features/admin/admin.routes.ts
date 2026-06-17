@@ -26,5 +26,10 @@ export const ADMINLAYOUT_ROUTES: Routes = [
     loadComponent: () => import('./todo/todo').then(c => c.Todo),
     data: { title: 'Todo' }
   },
+    {
+    path: 'dashboard',
+    loadComponent: () => import('./dashboard/dashboard').then(c => c.Dashboard),
+    data: { title: 'Dashboard' }
+  },
 ];
  
