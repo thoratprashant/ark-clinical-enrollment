@@ -88,7 +88,7 @@ export class Todo implements OnInit, OnDestroy {
 
     this.closeTimer = setTimeout(() => {
       this.closeCongratulationPopup();
-    }, 3000);
+    }, 3000000);
   }
   closeCongratulationPopup(): void {
     this.showCongratulationPopup = false;
