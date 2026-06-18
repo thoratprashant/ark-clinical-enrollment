@@ -1,9 +1,54 @@
 <div class="container-fluid todo--wrapper" data-aos="fade-up" data-aos-duration="500">
+
+
+  @if (showCongratulationPopup) {
+  <div class="reward-overlay">
+    <div class="reward-confetti">
+      @for (item of confettiItems; track item.id) {
+      <span class="confetti-piece" [style.--x]="item.x + 'px'" [style.--y]="item.y + 'px'"
+        [style.--r]="item.rotate + 'deg'" [style.--delay]="item.delay + 's'" [style.--size]="item.size + 'px'">
+      </span>
+      }
+    </div>
+
+    <div class="reward-popup">
+      <button type="button" class="reward-close" (click)="closeCongratulationPopup()">
+        ×
+      </button>
+
+
+      <div class="reward-badge">
+        <div class="badge-glow"></div>
+        <div class="badge-circle">
+          <span>✓</span>
+        </div>
+      </div>
+
+      <p class="reward-label">Reward Unlocked</p>
+
+      <h2>Congratulations!</h2>
+
+      <p class="reward-text">
+        You unlocked the <strong>4th step</strong>
+      </p>
+
+      <div class="reward-ticket">
+        <span>STEP 4</span>
+        <strong>Unlocked Successfully</strong>
+      </div>
+
+      <button type="button" class="reward-btn" (click)="closeCongratulationPopup()">
+        Awesome
+      </button>
+    </div>
+  </div>
+  }
+
   <div class="row">
     <div class="col-12 header--banner">
       <div class="card p-3 p-sm-4 d-flex flex-column mb-4 mb-sm-5">
         <div class="d-flex flex-lg-row flex-column align-items-xl-center justify-content-md-between gap-3">
-          <div class="d-flex flex-column gap-2"  data-aos="fade-up" data-aos-duration="500" data-aos-delay="50">
+          <div class="d-flex flex-column gap-2" data-aos="fade-up" data-aos-duration="500" data-aos-delay="50">
             <div class="d-flex align-items-center gap-2">
               <img src="images/mission-control-top.svg" alt="img" class="img-fluid">
               <p class="font-14 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Mission Control</p>
@@ -13,35 +58,41 @@
                 class="clr--F9712A">Legend Badge</span>. Keep the momentum!</p>
           </div>
           <div class="d-flex flex-row flex-wrap flex-sm-nowrap align-items-stretch section-sub-cards">
-            <div class="backdrop-card  d-flex flex-column align-items-center text-center mb-0"  data-aos="fade-up" data-aos-duration="500" data-aos-delay="100"> 
-                <img src="images/day-streak-top.svg" alt="img" class="img-fluid">
-                <p class="text-white font-24 fw-normal mb-0 font-mono-light">15</p>
-                <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Day Streak</p> 
+            <div class="backdrop-card  d-flex flex-column align-items-center text-center mb-0" data-aos="fade-up"
+              data-aos-duration="500" data-aos-delay="100">
+              <img src="images/day-streak-top.svg" alt="img" class="img-fluid">
+              <p class="text-white font-24 fw-normal mb-0 font-mono-light">15</p>
+              <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Day Streak</p>
             </div>
-            <div class="backdrop-card  d-flex flex-column align-items-center text-center mb-0"  data-aos="fade-up" data-aos-duration="500" data-aos-delay="200"> 
-                <img src="images/gold-saves-top.svg" alt="img" class="img-fluid">
-                <p class="text-white font-24 fw-normal mb-0 font-mono-light">19</p>
-                <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Gold Saves</p> 
+            <div class="backdrop-card  d-flex flex-column align-items-center text-center mb-0" data-aos="fade-up"
+              data-aos-duration="500" data-aos-delay="200">
+              <img src="images/gold-saves-top.svg" alt="img" class="img-fluid">
+              <p class="text-white font-24 fw-normal mb-0 font-mono-light">19</p>
+              <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Gold Saves</p>
             </div>
-            <div class="backdrop-card  d-flex flex-column align-items-center text-center mb-0"  data-aos="fade-up" data-aos-duration="500" data-aos-delay="300"> 
-                <img src="images/silver-saves-top.svg" alt="img" class="img-fluid">
-                <p class="text-white font-24 fw-normal mb-0 font-mono-light">12</p>
-                <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Silver Saves</p> 
+            <div class="backdrop-card  d-flex flex-column align-items-center text-center mb-0" data-aos="fade-up"
+              data-aos-duration="500" data-aos-delay="300">
+              <img src="images/silver-saves-top.svg" alt="img" class="img-fluid">
+              <p class="text-white font-24 fw-normal mb-0 font-mono-light">12</p>
+              <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Silver Saves</p>
             </div>
-            <div class="backdrop-card  d-flex flex-column align-items-center text-center mb-0"  data-aos="fade-up" data-aos-duration="500" data-aos-delay="400"> 
-                <img src="images/bronze-saves-top.svg" alt="img" class="img-fluid">
-                <p class="text-white font-24 fw-normal mb-0 font-mono-light">10</p>
-                <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Bronze Saves</p> 
+            <div class="backdrop-card  d-flex flex-column align-items-center text-center mb-0" data-aos="fade-up"
+              data-aos-duration="500" data-aos-delay="400">
+              <img src="images/bronze-saves-top.svg" alt="img" class="img-fluid">
+              <p class="text-white font-24 fw-normal mb-0 font-mono-light">10</p>
+              <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Bronze Saves</p>
             </div>
-            <div class="backdrop-card  d-flex flex-column align-items-center text-center mb-0"  data-aos="fade-up" data-aos-duration="500" data-aos-delay="500"> 
-                <img src="images/rank-top.svg" alt="img" class="img-fluid">
-                <p class="text-white font-24 fw-normal mb-0 font-mono-light">#3</p>
-                <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Rank</p> 
+            <div class="backdrop-card  d-flex flex-column align-items-center text-center mb-0" data-aos="fade-up"
+              data-aos-duration="500" data-aos-delay="500">
+              <img src="images/rank-top.svg" alt="img" class="img-fluid">
+              <p class="text-white font-24 fw-normal mb-0 font-mono-light">#3</p>
+              <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Rank</p>
             </div>
-            <div class="backdrop-card  d-flex flex-column align-items-center text-center mb-0"  data-aos="fade-up" data-aos-duration="500" data-aos-delay="600"> 
-                <img src="images/conversion-top.svg" alt="img" class="img-fluid">
-                <p class="text-white font-24 fw-normal mb-0 font-mono-light">24%</p>
-                <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Conversion</p> 
+            <div class="backdrop-card  d-flex flex-column align-items-center text-center mb-0" data-aos="fade-up"
+              data-aos-duration="500" data-aos-delay="600">
+              <img src="images/conversion-top.svg" alt="img" class="img-fluid">
+              <p class="text-white font-24 fw-normal mb-0 font-mono-light">24%</p>
+              <p class="font-12 fw-normal clr--ffffff99 font-plus-jakarta mb-0">Conversion</p>
             </div>
           </div>
         </div>
@@ -55,7 +106,8 @@
           <i class="icon icon--zap flex-shrink-0 me-2 mt-1"></i>
           <div class="d-flex flex-column mb-2 mb-sm-0">
             <h2 class="clr--14181F font-26 fw-bold mb-0">To-Do’s</h2>
-            <p class="mb-0 font-16 clr--6B7280 fw-normal font-plus-jakarta">View pending, due for followup, or new referral</p>
+            <p class="mb-0 font-16 clr--6B7280 fw-normal font-plus-jakarta">View pending, due for followup, or new
+              referral</p>
           </div>
         </div>
         <div class="d-flex gap-2 flex-wrap align-items-center">
@@ -106,7 +158,7 @@
                 <div class="d-flex flex-column ">
                   <h3 class="font-24 clr--14181F mb-1 user--name">{{slide.userName}}</h3>
                   <p class="gap-2 mb-0 font-16 clr--676F7E font-plus-jakarta d-flex align-items-center flex-wrap">
-                   {{slide.horizon}}
+                    {{slide.horizon}}
                     <span class="rounded-2 contact py-1 px-2 clr--1FAD91 font-plus-jakarta">{{slide.contactno}}</span>
                   </p>
                 </div>
@@ -119,7 +171,8 @@
               {{slide.noteData}}
             </div>
 
-            <div class="d-flex flex-column flex-sm-row align-items-center justify-content-between w-100 next--action d-none">
+            <div
+              class="d-flex flex-column flex-sm-row align-items-center justify-content-between w-100 next--action d-none">
               <mat-form-field appearance="outline" class="cust--dd">
                 <mat-select placeholder="New">
                   <mat-option value="01">Pending</mat-option>
@@ -129,16 +182,11 @@
               </mat-form-field>
               <mat-form-field appearance="outline" class="datetime--picker">
                 <mat-icon matPrefix class="field-prefix-icon">calendar_today</mat-icon>
-                <input
-                matInput
-                [owlDateTime]="dt1"
-                [owlDateTimeTrigger]="dt1"
-                placeholder="MM/DD/YYYY HH:MM "
-                readonly
-                />
+                <input matInput [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="MM/DD/YYYY HH:MM "
+                  readonly />
                 <mat-icon matSuffix>expand_more</mat-icon>
                 <owl-date-time #dt1></owl-date-time>
-            </mat-form-field> 
+              </mat-form-field>
             </div>
 
             <footer class="d-flex align-items-center justify-content-between w-100 ">
@@ -146,9 +194,11 @@
                 <div class="d-flex align-items-center ">
                   <img src="images/zap-sm.png" alt="zap" class="me-2">
                   <div class="d-flex align-items-center clr--orange-1 font-plus-jakarta gap-2">
-                    <div class="h--box font-16 font-plus-jakarta d-flex align-items-center justify-content-center">{{slide.hours}}
+                    <div class="h--box font-16 font-plus-jakarta d-flex align-items-center justify-content-center">
+                      {{slide.hours}}
                     </div> <span>:</span>
-                    <div class="h--box font-16 font-plus-jakarta d-flex align-items-center justify-content-center">{{slide.minite}}
+                    <div class="h--box font-16 font-plus-jakarta d-flex align-items-center justify-content-center">
+                      {{slide.minite}}
                     </div> <span class="font-16"> {{slide.leftdata}}</span>
                   </div>
                 </div>
@@ -173,7 +223,8 @@
       <section class="priority-card w-100 p-4">
         <div class="priority-card__header">
           <h2 class="clr--fff font-26 fw-bold mb-1">All Priority To-Do's</h2>
-          <p class="mb-0 font-16 clr--fff fw-normal font-plus-jakarta">View pending, due for followup, or new referral</p>
+          <p class="mb-0 font-16 clr--fff fw-normal font-plus-jakarta">View pending, due for followup, or new referral
+          </p>
         </div>
 
         <div class="todo-list">
@@ -199,7 +250,7 @@
                   <img src="images/eye-orange.svg" alt="icon pin" class="">
                 </button>
               </div>
-            </div> 
+            </div>
 
           </div>
           }
