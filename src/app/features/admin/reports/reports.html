@@ -1,0 +1,219 @@
+<div class="container-fluid reports-wrapper">
+    <div class="row mb-4">
+        <div class="col-12 d-flex align-items-center justify-content-between flex-wrap gap-2">
+            <div class="d-flex flex-column gap-2">
+                <h2 class="font-24 fw-bold clr--0F1729 mb-0 font-inter">Reports</h2>
+                <p class="font-14 fw-normal clr--6B7280 mb-0 font-inter">Track performance, outcomes, and SLA adherence</p>
+            </div>
+            <mat-form-field appearance="outline" class="cust--dd secondary--dd">
+                <img matPrefix src="images/export-white.svg" alt="" class="img-fluid">
+                <mat-select placeholder="Export All">
+                    <mat-option value="1">Export PDF</mat-option>
+                    <mat-option value="2">Export Excel</mat-option>
+                    <mat-option value="2">Export CSV</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div #attemptDistributionSection class="row distribution-section mb-4">
+        <div class="col-12 mb-3">
+            <h2 class="font-14 clr--0F1729 fw-semibold font-inter mb-0">Attempt Distribution</h2>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div data-aos="fade-up" data-aos-duration="1600" class="card blue d-flex flex-column gap-2 mb-lg-0 mb-2" [class.card-visible]="distributioncardVisible[0]">
+                <h2 class="font-24 clr--1a1a1a font-mono-light fw-bold mb-0">{{ totalAttempt | number:'1.0-0' }}</h2>
+                <p class="font-12 clr--1a1a1a80 font-mono-light fw-normal mb-0">0 attempts</p>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div data-aos="fade-up" data-aos-duration="1600" class="card green d-flex flex-column gap-2 mb-lg-0 mb-2" [class.card-visible]="distributioncardVisible[1]">
+                <h2 class="font-24 clr--1a1a1a font-mono-light fw-bold mb-0">{{ totalAttempt1 | number:'1.0-0' }}</h2>
+                <p class="font-12 clr--1a1a1a80 font-mono-light fw-normal mb-0">1 attempts</p>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div data-aos="fade-up" data-aos-duration="1600" class="card yellow d-flex flex-column gap-2 mb-lg-0 mb-2" [class.card-visible]="distributioncardVisible[2]">
+                <h2 class="font-24 clr--1a1a1a font-mono-light fw-bold mb-0">{{ totalAttempt2 | number:'1.0-0' }}</h2>
+                <p class="font-12 clr--1a1a1a80 font-mono-light fw-normal mb-0">2 attempts</p>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div data-aos="fade-up" data-aos-duration="1600" class="card purple d-flex flex-column gap-2 mb-lg-0 mb-2" [class.card-visible]="distributioncardVisible[3]">
+                <h2 class="font-24 clr--1a1a1a font-mono-light fw-bold mb-0">{{ totalAttempt3 | number:'1.0-0' }}</h2>
+                <p class="font-12 clr--1a1a1a80 font-mono-light fw-normal mb-0">3+ attempts</p>
+            </div>
+        </div>
+    </div>
+    <div #utilitiesSection data-aos="fade-up" data-aos-duration="1800" class="row mb-4">
+        <div class="col-12 utilities-section w-100 d-flex flex-row justify-content-lg-between align-items-stretch flex-wrap gap-2">
+            <div class="card menu-card d-flex flex-column align-items-center text-center gap-2 mb-0" [class.card-visible]="utilitiescardVisible[0]">
+                <h2 class="font-24 fw-bold font-inter text-white mb-0">{{ totalReferrals | number:'1.0-0' }}</h2>
+                <p class="font-10 fw-normal font-inter text-white mb-0">Total Referrals</p>
+            </div>
+            <div class="card menu-card d-flex flex-column align-items-center text-center gap-2 mb-0" [class.card-visible]="utilitiescardVisible[1]">
+                <h2 class="font-24 fw-bold font-inter text-white mb-0">{{ contactRate | number:'1.1-1' }}%</h2>
+                <p class="font-10 fw-normal font-inter text-white mb-0">Contact Rate</p>
+            </div>
+            <div class="card menu-card d-flex flex-column align-items-center text-center gap-2 mb-0" [class.card-visible]="utilitiescardVisible[2]">
+                <h2 class="font-24 fw-bold font-inter text-white mb-0">{{ conversionRate | number:'1.1-1' }}%</h2>
+                <p class="font-10 fw-normal font-inter text-white mb-0">Conversion Rate</p>
+            </div>
+            <div class="card menu-card d-flex flex-column align-items-center text-center gap-2 mb-0" [class.card-visible]="utilitiescardVisible[3]">
+                <h2 class="font-24 fw-bold font-inter text-white mb-0">{{ siteScore | number:'1.1-1' }}%</h2>
+                <p class="font-10 fw-normal font-inter text-white mb-0">Site's Score</p>
+            </div>
+            <div class="card menu-card d-flex flex-column align-items-center text-center gap-2 mb-0" [class.card-visible]="utilitiescardVisible[4]">
+                <h2 class="font-24 fw-bold font-inter text-white mb-0">{{ firstTimeContact | number:'1.1-1' }}h</h2>
+                <p class="font-10 fw-normal font-inter text-white mb-0">Avg First Time Contact</p>
+            </div>
+            <div class="card menu-card d-flex flex-column align-items-center text-center gap-2 mb-0" [class.card-visible]="utilitiescardVisible[5]">
+                <h2 class="font-24 fw-bold font-inter text-white mb-0">{{ avgAttempts | number:'1.1-1' }}</h2>
+                <p class="font-10 fw-normal font-inter text-white mb-0">Avg Attempts</p>
+            </div>
+            <div class="card menu-card d-flex flex-column align-items-center text-center gap-2 mb-0" [class.card-visible]="utilitiescardVisible[6]">
+                <h2 class="font-24 fw-bold font-inter text-white mb-0">{{ avgFollowUp | number:'1.1-1' }}d</h2>
+                <p class="font-10 fw-normal font-inter text-white mb-0">Avg Follow-up</p>
+            </div>
+        </div>
+    </div>
+    <div class="row weekly-activity-section mb-4">
+        <div #slaComplianceSection class="col-12 col-lg-6">
+            <div data-aos="fade-up" data-aos-duration="2000" class="card d-flex flex-column gap-2 mb-4 mb-lg-0">
+                <div class="d-flex flex-column gap-2">
+                    <h2 class="font-14 fw-bold clr--0F1729 mb-0 font-inter">
+                        SLA Compliance
+                    </h2>
+                </div>
+
+                <div class="d-flex align-items-md-center flex-sm-row flex-column gap-3">
+                    <div class="progress-ring-wrapper d-flex justify-content-center align-items-center">
+                        <svg class="progress-ring" viewBox="0 0 120 120">
+                            <circle
+                                class="ring-bg"
+                                cx="60"
+                                cy="60"
+                                r="50">
+                            </circle>
+
+                            <circle
+                                class="ring-progress"
+                                cx="60"
+                                cy="60"
+                                r="50"
+                                [attr.stroke-dasharray]="circumference"
+                                [attr.stroke-dashoffset]="strokeDashoffset">
+                            </circle>
+                        </svg>
+                        <div class="progress-text font-26 clr--0F1729 fw-bold font-inter">
+                            {{ displayValue }}%
+                        </div>
+                    </div>
+                    <div class="row w-100">
+                        <div class="col-4 col-sm-3 col-md-3 d-flex flex-column align-items-center text-center gap-1 mb-2">
+                            <h2 class="font-18 fw-bold font-inter clr--1FAD91 mb-0">20</h2>
+                            <p class="font-10 fw-normal font-inter clr--6B7280 mb-0">New</p>
+                        </div>
+                        <div class="col-4 col-sm-3 col-md-3 d-flex flex-column align-items-center text-center gap-1 mb-2">
+                            <h2 class="font-18 fw-bold font-inter clr--F97015 mb-0">5</h2>
+                            <p class="font-10 fw-normal font-inter clr--6B7280 mb-0">1st Attempt</p>
+                        </div>
+                        <div class="col-4 col-sm-3 col-md-3 d-flex flex-column align-items-center text-center gap-1 mb-2">
+                            <h2 class="font-18 fw-bold font-inter clr--F97015 mb-0">5</h2>
+                            <p class="font-10 fw-normal font-inter clr--6B7280 mb-0">2nd Attempt</p>
+                        </div>
+                        <div class="col-4 col-sm-3 col-md-3 d-flex flex-column align-items-center text-center gap-1 mb-2">
+                            <h2 class="font-18 fw-bold font-inter clr--F97015 mb-0">5</h2>
+                            <p class="font-10 fw-normal font-inter clr--6B7280 mb-0">3rd Attempt</p>
+                        </div>
+                        <div class="col-4 col-sm-3 col-md-3 d-flex flex-column align-items-center text-center gap-1 mb-2">
+                            <h2 class="font-18 fw-bold font-inter clr--DC2828 mb-0">5</h2>
+                            <p class="font-10 fw-normal font-inter clr--6B7280 mb-0">Overdue</p>
+                        </div>
+                        <div class="col-4 col-sm-3 col-md-3 d-flex flex-column align-items-center text-center gap-1 mb-2">
+                            <h2 class="font-18 fw-bold font-inter clr--C79857 mb-0">15</h2>
+                            <p class="font-10 fw-normal font-inter clr--6B7280 mb-0">ICF</p>
+                        </div>
+                        <div class="col-4 col-sm-3 col-md-3 d-flex flex-column align-items-center text-center gap-1 mb-2">
+                            <h2 class="font-18 fw-bold font-inter text-primary mb-0">223</h2>
+                            <p class="font-10 fw-normal font-inter clr--6B7280 mb-0">Pre-screening</p>
+                        </div>
+                        <div class="col-4 col-sm-3 col-md-3 d-flex flex-column align-items-center text-center gap-1 mb-2">
+                            <h2 class="font-18 fw-bold font-inter clr--0066FF mb-0">223</h2>
+                            <p class="font-10 fw-normal font-inter clr--6B7280 mb-0">Scheduled</p>
+                        </div>
+                        <div class="col-4 col-sm-3 col-md-3 d-flex flex-column align-items-center text-center gap-1 mb-2">
+                            <h2 class="font-18 fw-bold font-inter clr--1FAD91 mb-0">10</h2>
+                            <p class="font-10 fw-normal font-inter clr--6B7280 mb-0">DNQ</p>
+                        </div>
+                        <div class="col-4 col-sm-3 col-md-3 d-flex flex-column align-items-center text-center gap-1 mb-2">
+                            <h2 class="font-18 fw-bold font-inter clr--1FAD91 mb-0">30</h2>
+                            <p class="font-10 fw-normal font-inter clr--6B7280 mb-0">Unresponsive</p>
+                        </div>
+                        <div class="col-4 col-sm-3 col-md-3 d-flex flex-column align-items-center text-center gap-1 mb-2">
+                            <h2 class="font-18 fw-bold font-inter clr--1FAD91 mb-0">50</h2>
+                            <p class="font-10 fw-normal font-inter clr--6B7280 mb-0">On-Hold</p>
+                        </div>
+                        <div class="col-4 col-sm-3 col-md-3 d-flex flex-column align-items-center text-center gap-1 mb-2">
+                            <h2 class="font-18 fw-bold font-inter clr--1FAD91 mb-0">70</h2>
+                            <p class="font-10 fw-normal font-inter clr--6B7280 mb-0">Not Interested</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div #outcomeDistributionSection class="col-12 col-lg-6">
+            <div data-aos="fade-up" data-aos-duration="2000" class="card d-flex flex-column gap-1 mb-0">
+                <div class="d-flex flex-column gap-2">
+                    <h2 class="font-14 fw-bold clr--0F1729 mb-0 font-inter">Outcome Distribution</h2>
+                </div>
+                <div class="status-chart">
+                    <div class="status-row d-flex align-items-center " *ngFor="let item of chartData">
+                        
+                        <div class="label-text clr--6B7280 font-12 fw-normal font-inter">{{ item.label }}</div>
+
+                        <div class="track">
+                            <div
+                                class="fill d-flex align-items-center justify-content-end"
+                                [style.width.%]="item.animatedValue"
+                                [style.backgroundColor]="item.color">
+
+                                <span class="text-white font-10 fw-semibold font-inter">
+                                    {{ item.count }} ({{ item.value }}%)
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div data-aos="fade-up" data-aos-duration="2200" class="weekly-activity-section">
+            <div class="col-12 card d-flex flex-column gap-1">
+                <div class="d-flex flex-column gap-2">
+                    <h2 class="font-14 fw-bold clr--0F1729 mb-0 font-inter">Weekly Activity (Last 7 days)</h2>
+                    <p class="font-12 fw-normal clr--6B7280 mb-0 font-inter">Un-contacted Referrals</p>
+                </div>
+                <div #weeklyActivitySection class="chart-scroll-wrapper mb-0">
+                    <div class="chart-scroll-area">
+                        <div class="chart-container">
+                            <apx-chart *ngIf="showChart"
+                                [series]="chartOptions.series"
+                                [chart]="chartOptions.chart"
+                                [xaxis]="chartOptions.xaxis"
+                                [yaxis]="chartOptions.yaxis"
+                                [stroke]="chartOptions.stroke"
+                                [grid]="chartOptions.grid"
+                                [markers]="chartOptions.markers"
+                                [legend]="chartOptions.legend"
+                                [tooltip]="chartOptions.tooltip"
+                                [colors]="chartOptions.colors">
+                            </apx-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
