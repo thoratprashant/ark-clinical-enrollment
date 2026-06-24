@@ -139,6 +139,7 @@ body{
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden; 
+            padding-right: 10px;
         }
         .mat-mdc-form-field-infix{
             padding-top: 13px;
@@ -195,6 +196,12 @@ body{
             height: 42px !important;
             display: flex !important;
             align-items: center !important;
+            .mat-mdc-select-min-line{
+                text-overflow: ellipsis;
+                overflow: hidden;
+                width: 100%;
+                display: block;
+            }
         }
         .mat-mdc-select-value,
         .mat-mdc-select-placeholder {

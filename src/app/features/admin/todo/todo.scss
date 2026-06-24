@@ -70,14 +70,13 @@
         background: #1f3f91;
         color: #fff;
         box-sizing: border-box;
-        margin-bottom: 30px;        
-        .priority-card__header {
-            margin-bottom: 40px; 
-        }
+        margin-bottom: 30px; 
         .todo-list {
             display: flex;
             flex-direction: column;
             gap: 24px;
+            max-height: 410px;
+            overflow: auto;
             .todo-item { 
                 padding: 12px; 
                 gap: 10px;
@@ -88,10 +87,11 @@
                 background-color 180ms ease,
                 transform 180ms ease,
                 box-shadow 180ms ease;
+                &.active,
                 &:hover {
                     background: #3762c2;
                     transform: translateY(-2px);
-                    box-shadow: 0 8px 18px rgba(10, 24, 70, 0.22);
+                    box-shadow: 0 8px 18px rgb(10 24 70 / 84%);
                 }
             }
         }
@@ -192,8 +192,8 @@
                 border-bottom: 1px solid rgba(31, 173, 145, 0.30);
                 margin: 16px 0;
                 padding: 16px 0;
-                .cust--dd{
-                    min-width: 208px;
+                .cust--dd{ 
+                    width: 100%;
                 }
                 .datetime--picker{
                     width: 230px;
@@ -778,12 +778,7 @@
         width: 100%;
         margin-bottom: 10px;
     } 
-}
-@media only screen and (min-width: 1280px) and (max-width: 1440px){
-    .todo--wrapper .todo-slide .next--action .cust--dd{
-        min-width: 160px;
-    }
-}
+} 
 
 @media only screen 
   and (min-width: 768px) 

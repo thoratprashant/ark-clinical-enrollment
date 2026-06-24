@@ -130,10 +130,10 @@
       </header>
       <section class="todo-carousel w-100">
         <!-- [disabled]="activeIndex === 0" -->
-        <button type="button" class="carousel-btn carousel-btn--prev" 
+        <!-- <button type="button" class="carousel-btn carousel-btn--prev" 
           (click)="prevSlide()" aria-label="Previous slide">
           <mat-icon>arrow_back_ios</mat-icon>
-        </button>
+        </button> -->
 
         <div class="carousel-stage">
           @for (slide of slides; track slide.id; let i = $index) {
@@ -228,14 +228,14 @@
       </section>
     </div>
     <div class="col-12 col-xl-4">
-      <section class="priority-card w-100 ">
-        <div class="priority-card__header p-2 p-sm-4">
+      <section class="priority-card w-100 p-4">
+        <div class="priority-card__header">
           <h2 class="clr--fff font-26 fw-bold mb-1">All Priority To-Do's</h2>
           <p class="mb-0 font-16 clr--fff fw-normal font-plus-jakarta">View pending, due for followup, or new referral
           </p>
         </div>
 
-        <div class="todo-list p-2 p-sm-4">
+        <div class="todo-list">
           @for (todo of todos; track todo.name) {
           <div class="todo-item d-flex align-items-center">
             <div class="todo-item__avatar font-16 d-flex align-items-center justify-content-center flex-shrink-0">
@@ -266,9 +266,6 @@
       </section>
     </div>
   </div>
-
-
-
   <div class="row">
     <div class="col-12 d-flex align-items-center justify-content-between gap-2 mb-4 ">
       <h2 class="font-24 clr--1a1a1a fw-bold mb-0 font-mono-light">Achievements</h2>

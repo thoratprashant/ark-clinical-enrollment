@@ -116,8 +116,8 @@ export class Todo implements OnInit, OnDestroy {
     {
       id: 1,
       type: 'gold',
-      userName: 'Emily Gold',
-      initials: 'EG',
+      userName: 'Meghna Shah',
+      initials: 'MS',
       horizon: 'HORIZON-1 Trial',
       contactno: '+1 345 678 9012',
       noteData: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing eli Lorem ipsum dolor sit amet, consectetur adipiscing elit , Lorem ipsum dolor sit amet, consectetur adipiscing dolor sit amet, consectetur adipiscing it Lorem ipsum dolor sit amet, consectetur adipiscing eli Lorem ipsum dolor sit amet, consectetur adipiscing elit',
@@ -130,8 +130,8 @@ export class Todo implements OnInit, OnDestroy {
     {
       id: 2,
       type: 'silver',
-      userName: 'Particia Silver',
-      initials: 'PS',
+      userName: 'Anish Pandey',
+      initials: 'AP',
       horizon: 'HORIZON-2 Trial',
       contactno: '+1 895 547 2154',
       noteData: 'Lorem ipsum dolor  it Lorem ipsum dolor sit amet, consectetur adipiscing eli Lorem ipsum dolor sit amet, consectetur adipiscing elit , Lorem ipsum dolor sit amet, consectetur adipiscing dolor sit amet, consectetur adipiscing it Lorem ipsum dolor sit amet, consectetur adipiscing eli Lorem ipsum dolor sit amet, consectetur adipiscing elit',
@@ -144,8 +144,106 @@ export class Todo implements OnInit, OnDestroy {
     {
       id: 3,
       type: 'bronze',
-      userName: 'Carter Bronze',
-      initials: 'CB',
+      userName: 'Pankaj Khairnar',
+      initials: 'PK',
+      horizon: 'HORIZON-3 Trial',
+      contactno: '+1 741 852 9632',
+      noteData: 'Lorem ipsu i Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsu i Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      medalimage: 'bronze-medal.png',
+      hours: '3',
+      minite: '44',
+      leftdata: 'left for BRONZE',
+      pulsing: '0-4 hrs Â· Pulsing'
+    },
+      {
+      id: 4,
+      type: 'gold',
+      userName: 'Manoj Nemade',
+      initials: 'MN',
+      horizon: 'HORIZON-1 Trial',
+      contactno: '+1 345 678 9012',
+      noteData: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing eli Lorem ipsum dolor sit amet, consectetur adipiscing elit , Lorem ipsum dolor sit amet, consectetur adipiscing dolor sit amet, consectetur adipiscing it Lorem ipsum dolor sit amet, consectetur adipiscing eli Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      medalimage: 'gold-medal.png',
+      hours: '1',
+      minite: '32',
+      leftdata: 'left for GOLD',
+      pulsing: '0-2 hrs Â· Pulsing'
+    },
+    {
+      id: 5,
+      type: 'silver',
+      userName: 'Laxman Gatade',
+      initials: 'LG',
+      horizon: 'HORIZON-2 Trial',
+      contactno: '+1 895 547 2154',
+      noteData: 'Lorem ipsum dolor  it Lorem ipsum dolor sit amet, consectetur adipiscing eli Lorem ipsum dolor sit amet, consectetur adipiscing elit , Lorem ipsum dolor sit amet, consectetur adipiscing dolor sit amet, consectetur adipiscing it Lorem ipsum dolor sit amet, consectetur adipiscing eli Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      medalimage: 'silver-medal.png',
+      hours: '2',
+      minite: '24',
+      leftdata: 'left for SILVER',
+      pulsing: '0-3 hrs Â· Pulsing'
+    },
+    {
+      id: 6,
+      type: 'bronze',
+      userName: 'Satyajeet Mane',
+      initials: 'SM',
+      horizon: 'HORIZON-3 Trial',
+      contactno: '+1 741 852 9632',
+      noteData: 'Lorem ipsu i Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsu i Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      medalimage: 'bronze-medal.png',
+      hours: '3',
+      minite: '44',
+      leftdata: 'left for BRONZE',
+      pulsing: '0-4 hrs Â· Pulsing'
+    },
+        {
+      id: 7,
+      type: 'gold',
+      userName: 'Prashant Thorat',
+      initials: 'PT',
+      horizon: 'HORIZON-1 Trial',
+      contactno: '+1 345 678 9012',
+      noteData: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing eli Lorem ipsum dolor sit amet, consectetur adipiscing elit , Lorem ipsum dolor sit amet, consectetur adipiscing dolor sit amet, consectetur adipiscing it Lorem ipsum dolor sit amet, consectetur adipiscing eli Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      medalimage: 'gold-medal.png',
+      hours: '1',
+      minite: '32',
+      leftdata: 'left for GOLD',
+      pulsing: '0-2 hrs Â· Pulsing'
+    },
+    {
+      id: 8,
+      type: 'silver',
+      userName: 'Michael Hunt',
+      initials: 'MH',
+      horizon: 'HORIZON-2 Trial',
+      contactno: '+1 895 547 2154',
+      noteData: 'Lorem ipsum dolor  it Lorem ipsum dolor sit amet, consectetur adipiscing eli Lorem ipsum dolor sit amet, consectetur adipiscing elit , Lorem ipsum dolor sit amet, consectetur adipiscing dolor sit amet, consectetur adipiscing it Lorem ipsum dolor sit amet, consectetur adipiscing eli Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      medalimage: 'silver-medal.png',
+      hours: '2',
+      minite: '24',
+      leftdata: 'left for SILVER',
+      pulsing: '0-3 hrs Â· Pulsing'
+    },
+    {
+      id: 9,
+      type: 'bronze',
+      userName: 'Jessica Smith',
+      initials: 'JS',
+      horizon: 'HORIZON-3 Trial',
+      contactno: '+1 741 852 9632',
+      noteData: 'Lorem ipsu i Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsu i Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      medalimage: 'bronze-medal.png',
+      hours: '3',
+      minite: '44',
+      leftdata: 'left for BRONZE',
+      pulsing: '0-4 hrs Â· Pulsing'
+    },
+    {
+      id: 10,
+      type: 'bronze',
+      userName: 'Alice Brown',
+      initials: 'AB',
       horizon: 'HORIZON-3 Trial',
       contactno: '+1 741 852 9632',
       noteData: 'Lorem ipsu i Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsu i Lorem ipsum dolor sit amet, consectetur adipiscing elit',
@@ -173,8 +271,44 @@ export class Todo implements OnInit, OnDestroy {
 
   todos: PriorityTodo[] = [
     {
-      initials: 'SH',
-      name: 'Sarah Johnson',
+      initials: 'MS',
+      name: 'Meghna Shah',
+      phone: '+1 278 826 2866',
+      due: 'Due in 4 hrs'
+    },
+    {
+      initials: 'AS',
+      name: 'Anish Pandey',
+      phone: '+1 345 678 9012',
+      due: 'Due in 2 hrs'
+    },
+    {
+      initials: 'PK',
+      name: 'Pankaj Khairnar',
+      phone: '+1 234 567 8901',
+      due: 'Due in 4 hrs'
+    },
+    {
+      initials: 'MN',
+      name: 'Manoj Nemade',
+      phone: '+1 456 789 0123',
+      due: 'Due in 1 hr'
+    },
+    {
+      initials: 'LG',
+      name: 'Laxman Gatade',
+      phone: '+1 456 789 0123',
+      due: 'Due in 1 hr'
+    },
+    {
+      initials: 'SM',
+      name: 'Satyajeet Mane',
+      phone: '+1 278 826 2866',
+      due: 'Due in 4 hrs'
+    },
+    {
+      initials: 'PT',
+      name: 'Prashant Thorat',
       phone: '+1 278 826 2866',
       due: 'Due in 4 hrs'
     },
