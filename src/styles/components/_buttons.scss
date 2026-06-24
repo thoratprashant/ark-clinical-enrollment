@@ -254,8 +254,12 @@ body{
         .mat-mdc-select-panel{
             padding: 0;
             .mat-mdc-option{
-                min-height: 42px;
+                min-height: unset;
                 font-size: 14px !important;
+                line-height: 20px;
+                padding: 8px 12px;
+                border-bottom: 1px solid #ddd;
+                margin-bottom: 0;
                 .mdc-list-item__primary-text{
                     font-family: "Plus Jakarta Sans", sans-serif;
                 }
