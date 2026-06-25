@@ -99,6 +99,8 @@
       </div>
     </div>
   </div>
+
+
   <div class="row">
     <div class="col-12 col-xl-8">
       <header class="d-flex align-items-start justify-content-between w-100 flex-column flex-sm-row">
@@ -122,17 +124,16 @@
               <mat-option value="4">Failed Screening</mat-option>
               <mat-option value="5">No Longer Interested</mat-option>
               <mat-option value="6">On hold - Pending Medical Record</mat-option>
-              <mat-option value="7">On hold - Patient's Reason</mat-option> 
+              <mat-option value="7">On hold - Patient's Reason</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
 
       </header>
-      <section class="todo-carousel w-100">
-        <!-- [disabled]="activeIndex === 0" -->
-        <button type="button" class="carousel-btn carousel-btn--prev" 
-          (click)="prevSlide()" aria-label="Previous slide">
-          <mat-icon>arrow_back_ios</mat-icon>
+      <section class="todo-carousel w-100"> 
+        
+        <button type="button" class="carousel-btn carousel-btn--prev" (click)="prevSlide()" aria-label="Previous slide">
+          <mat-icon class="ms-1">arrow_back_ios</mat-icon>
         </button>
 
         <div class="carousel-stage">
@@ -185,7 +186,7 @@
                   <mat-option value="4">Failed Screening</mat-option>
                   <mat-option value="5">No Longer Interested</mat-option>
                   <mat-option value="6">On hold - Pending Medical Record</mat-option>
-                  <mat-option value="7">On hold - Patient's Reason</mat-option> 
+                  <mat-option value="7">On hold - Patient's Reason</mat-option>
                 </mat-select>
               </mat-form-field>
               <mat-form-field appearance="outline" class="datetime--picker flex-shrink-0">
@@ -220,8 +221,7 @@
           </article>
           }
         </div>
-
-        <!-- [disabled]="activeIndex === slides.length - 1" -->
+ 
         <button type="button" class="carousel-btn carousel-btn--next" (click)="nextSlide()" aria-label="Next slide">
           <mat-icon>arrow_forward_ios</mat-icon>
         </button>
@@ -229,15 +229,17 @@
     </div>
     <div class="col-12 col-xl-4">
       <section class="priority-card w-100 ">
-        <div class="priority-card__header p-2 p-sm-4">
+        <div class="priority-card__header p-4">
           <h2 class="clr--fff font-26 fw-bold mb-1">All Priority To-Do's</h2>
           <p class="mb-0 font-16 clr--fff fw-normal font-plus-jakarta">View pending, due for followup, or new referral
           </p>
         </div>
 
-        <div class="todo-list p-2 p-sm-4">
-          @for (todo of todos; track todo.name) {
-          <div class="todo-item d-flex align-items-center">
+        <div class="todo-list p-4">
+          @for (todo of todos; track todo.id; let i = $index) {
+          <div #todoItem class="todo-item d-flex align-items-center" [class.active]="i === activeIndex"
+            (click)="selectSlide(i)">
+
             <div class="todo-item__avatar font-16 d-flex align-items-center justify-content-center flex-shrink-0">
               {{ todo.initials }}
             </div>
@@ -247,19 +249,23 @@
                 <h3 class="font-16 mb-1">{{ todo.name }}</h3>
                 <p class="font-plus-jakarta font-12 mb-0">{{ todo.phone }}</p>
               </div>
+
               <div class="d-flex align-items-center gap-2">
-                <div class="todo-item__due font-12 font-plus-jakarta ">
+                <div class="todo-item__due font-12 font-plus-jakarta">
                   {{ todo.due }}
                 </div>
-                <button type="button" class="btn btn-light btn-lg rounded-3 icon--button--36">
-                  <img src="images/pin-img.png" alt="icon pin" class="">
+
+                <button type="button" class="btn btn-light btn-lg rounded-3 icon--button--36"
+                  (click)="$event.stopPropagation()">
+                  <img src="images/pin-img.png" alt="icon pin">
                 </button>
-                <button type="button" class="btn btn-light btn-lg rounded-3 icon--button--36 eye--btn">
-                  <img src="images/eye-orange.svg" alt="icon pin" class="">
+
+                <button type="button" class="btn btn-light btn-lg rounded-3 icon--button--36 eye--btn"
+                  (click)="$event.stopPropagation()">
+                  <img src="images/eye-orange.svg" alt="icon pin">
                 </button>
               </div>
             </div>
-
           </div>
           }
         </div>
